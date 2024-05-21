@@ -30,7 +30,8 @@ function Contatos() {
 
         
         <div className="min-h-screen flex items-center justify-center p-4 ml-60">
-          <form className=" bg-celestial-blue flex flex-col justify-center items-center p-8 widht-450 height-550 rounded-3xl">
+          <form className=" bg-celestial-blue flex flex-col justify-center 
+          items-center p-8 widht-450 height-550 rounded-3xl shadow-white">
             <div className="mb-8">
               <label
                 htmlFor="nome"
