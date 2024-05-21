@@ -12,7 +12,8 @@ export default {
       'celestial-blue': '#1e9bebff',
       'black': '#000000ff',
       'white': '#ffffffff',
-      'transparent': 'transparent'
+      'transparent': 'transparent',
+      'custom-blue': '#1E9BEB',
     },
     fontFamily: {
       'sans': ['Work Sans', 'sans-serif'],
