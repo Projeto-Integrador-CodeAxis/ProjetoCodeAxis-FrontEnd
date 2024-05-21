@@ -14,6 +14,7 @@ export default {
       'white': '#ffffffff',
       'transparent': 'transparent',
       'custom-blue': '#1E9BEB',
+      'degrade':'background: radial-gradient(circle, rgba(8,45,69,1) 0%, rgba(0,0,0,1) 100%)'
     },
     fontFamily: {
       'sans': ['Work Sans', 'sans-serif'],
