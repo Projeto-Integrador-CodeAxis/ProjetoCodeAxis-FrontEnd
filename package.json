@@ -31,5 +31,9 @@
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Projeto-Integrador-CodeAxis/ProjetoCodeAxis-FrontEnd.git",
+  "author": "Igor Fernandes <igor.fernandes95@outlook.com>",
+  "license": "MIT"
 }

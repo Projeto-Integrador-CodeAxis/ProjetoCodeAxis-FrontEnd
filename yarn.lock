@@ -337,6 +337,7 @@
 
 "@phosphor-icons/react@^2.1.5":
   version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@phosphor-icons/react/-/react-2.1.5.tgz#762c368778a4040d52c5532b8af1692b66e16783"
   resolved "https://registry.npmjs.org/@phosphor-icons/react/-/react-2.1.5.tgz"
   integrity sha512-B7vRm/w+P/+eavWZP5CB5Ul0ffK4Y7fpd/auWKuGvm+8pVgAJzbOK8O0s+DqzR+TwWkh5pHtJTuoAtaSvgCPzg==
 

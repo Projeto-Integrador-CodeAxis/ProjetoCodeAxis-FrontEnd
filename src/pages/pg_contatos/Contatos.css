@@ -1,0 +1,27 @@
+:root {
+    background: radial-gradient(circle, rgba(8,45,69,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.widht-450 {
+    width: 450px;
+  }
+
+  .height-550 {
+    height: 550px;
+  }
+
+  .shadow {
+    box-shadow: 6px 7px 10px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 6px 7px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 7px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .shadow-white {
+    box-shadow: 6px 4px 15px -7px rgba(255,250,250,0.75);
+    -webkit-box-shadow: 6px 4px 15px -7px rgba(255,250,250,0.75);
+    -moz-box-shadow: 6px 4px 15px -7px rgba(255,250,250,0.75);
+  }
+
+  .borda {
+    border: 4px white
+  }
