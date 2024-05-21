@@ -1,19 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import './App.css'
 import './index.css'
 import Sobre from './pages/sobre/Sobre'
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import Home from './pages/home/Home'
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+      <div className='gradient h-screen w-screen'>
       <BrowserRouter>
         <Routes>
-        <Route path="/Sobre" element={<Sobre />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
+      </div>
     </>
   )
 }
