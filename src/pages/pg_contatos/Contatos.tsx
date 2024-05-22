@@ -1,35 +1,29 @@
-import { GithubLogo } from "@phosphor-icons/react";
 import "./Contatos.css";
+import Botao from "../../components/botao/Botao";
 
 function Contatos() {
   return (
     <>
-      <div className="flex flex-row min-h-screen px-36">
-        <div className="flex flex-col justify-center align-center w-1/2 ">
+      <div className="flex flex-row min-h-screen px-36 min-w-screen">
+
+        <div className="flex flex-col justify-center item-center w-2/3 p-6">
           <h1 className="text-white font-poppins font-semibold text-6xl">
             Nos contate!
           </h1>
-          <p className="text-white font-sans font-light text-xl">
-            {" "}
+          <p className="text-white font-sans font-light text-xl mb-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             asperiores deleniti, explicabo ullam, ratione blanditiis similique,
             nobis laborum sunt pariatur deserunt! Saepe error dolor expedita
             dignissimos illum natus dolorum commodi.
           </p>
 
-        <div className="flex flex-row justify-start align-center mt-5 
-        gap-2 border border-white w-1/3 text-center rounded-lg">
-
-
-        <GithubLogo className='text-white' size={60} weight="thin" />
-        <h1 className="text-white font-poppins font-semibold 
-        text-sm p-2 text-center">Respositorio</h1>
-
-        </div>
+        <Botao texto="Repositório" link="https://github.com/Projeto-Integrador-CodeAxis" 
+        width={150} height= {50} />
+        
         </div>
 
         
-        <div className="min-h-screen flex items-center justify-center p-4 ml-60">
+        <div className="min-h-screen flex items-center justify-center p-4 w-1/2">
           <form className=" bg-celestial-blue flex flex-col justify-center 
           items-center p-8 widht-450 height-550 rounded-3xl shadow-white">
             <div className="mb-8">
