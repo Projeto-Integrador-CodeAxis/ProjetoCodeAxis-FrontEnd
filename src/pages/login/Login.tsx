@@ -10,7 +10,7 @@ function Login(){
 
   const{usuario, handleLogin} = useContext(AuthContext)
  
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading] = useState<boolean>(false)
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin> (
     {} as UsuarioLogin)
