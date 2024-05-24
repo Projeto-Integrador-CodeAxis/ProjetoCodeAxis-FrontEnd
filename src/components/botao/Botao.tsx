@@ -5,10 +5,11 @@ interface BotaoProps {
   link: string;
   width: number
   height: number
-  borderRadiusTopRight: number;
-  borderRadiusBottomRight: number;
-  borderRadiusTopLeft: number;
-  borderRadiusBottomLeft: number;
+
+  borderTop:number
+  borderLeft:number
+  borderRight:number
+  borderBotton:number
 }
 
 const Botao: React.FC<BotaoProps> = ({ texto, link, width, height, 
@@ -25,6 +26,7 @@ const Botao: React.FC<BotaoProps> = ({ texto, link, width, height,
       hover:bg-prussian-blue hover:text-celestial-blue 
       flex justify-center items-center text-center 
       transition duration-500`}
+
       style={{
         width: `${width}px`,
         height: `${height}px`,
