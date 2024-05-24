@@ -1,22 +1,25 @@
 import {useNavigate } from "react-router-dom"
-import Botao from "../../components/botao/Botao"
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
+import { RotatingLines } from "react-loader-spinner";
+import Botao from "../../components/botao/Botao";
 
 function Login(){
   const navigate = useNavigate()
 
-  const{usuario, handleLogin, isLoading} = useContext(AuthContext)
+  const{usuario, handleLogin} = useContext(AuthContext)
+ 
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
-  const[usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-      {} as UsuarioLogin
-  )
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin> (
+    {} as UsuarioLogin)
 
   useEffect(() => {
-      if(usuario.token !== '')
-          {navigate('/')}
-  },[usuario])
+    if(usuario.token !== ''){
+        navigate("/home")
+    }
+}, [usuario])
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
       setUsuarioLogin({
@@ -29,6 +32,9 @@ function Login(){
       e.preventDefault()
       handleLogin(usuarioLogin)
   }
+
+console.log(JSON.stringify(usuarioLogin.usuario))
+
 
         return (
           <>
@@ -43,12 +49,12 @@ function Login(){
                   termino de Bootcamp Generation Brasil
                 </p>
 
-                <Botao
-                  texto="Registre-se"
-                  link="https://github.com/Projeto-Integrador-CodeAxis"
-                  width={150}
-                  height={50}
-                />
+                <Botao texto="Registre-se" link="https://github.com/Projeto-Integrador-CodeAxis" 
+                    width={150} height= {50} 
+                    borderRadiusTopRight ={25}
+                    borderRadiusBottomRight= {25}
+                    borderRadiusTopLeft = {25}
+                    borderRadiusBottomLeft={0}/>
               </div>
 
               <div className="min-h-screen flex items-center justify-center p-4 w-1/2">
@@ -63,8 +69,8 @@ function Login(){
                   <div className="mb-8">
                     <label
                       htmlFor="usuario"
-                      className="block text-sm font-sans font-medium text-white"
-                    ></label>
+                      className="block text-sm font-sans font-medium text-white">
+                      </label>
                     <input
                       type="text"
                       id="usuario"
@@ -74,17 +80,15 @@ function Login(){
                       className="w-[330px] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                               placeholder-font-poppins border-2 border-white shadow "
                       value={usuarioLogin.usuario}
-                      onChange={(e:ChangeEvent<HTMLInputElement>) =>
-                        atualizarEstado(e)
-                      }
+                      onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                   </div>
 
                   <div className="mb-8">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-sans font-medium text-white"
-                    ></label>
+                      className="block text-sm font-sans font-medium text-white">
+                      </label>
                     <input
                       type="password"
                       id="senha"
@@ -95,20 +99,29 @@ function Login(){
                               placeholder-font-poppins border-2 border-white shadow "
                       value={usuarioLogin.senha}
                       onChange={(e:ChangeEvent<HTMLInputElement>) =>
-                        atualizarEstado(e)
-                      }
+                        atualizarEstado(e)}
                     />
                   </div>
 
                   <div className="">
-                    <button
+                  <button
                       type="submit"
                       className="w-[330px] h-[35px] rounded-lg
                             border-2 border-white text-white font-poppins font-semibold
                             hover:border-prussian-blue"
-                      style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}
-                    >
-                      Enviar
+                      style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}>
+
+                          {isLoading ?
+                          <RotatingLines
+                            strokeColor='white'
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="24"
+                            visible={true}
+                          />:
+                          <span>Entrar</span>
+                          }
+                        
                     </button>
                   </div>
                 </form>
