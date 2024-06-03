@@ -1,7 +1,6 @@
 import './NavBar.css'
 
 import Botao from "../botao/Botao"
-import { List } from '@phosphor-icons/react'
 import { ReactNode, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -14,7 +13,9 @@ function Navbar() {
 
   const toggleMenu = () => {
     setMenuVisivel(!menuVisivel); 
+    console.log(menuVisivel)
   };
+
 
   const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
 
@@ -67,8 +68,7 @@ function Navbar() {
                         alt="Logo" className="w-full h-full object-cover"/>
             </div>
 
-          <Burguer />
-          <List id='burguer' size={32} className='mb-4' onClick={toggleMenu}  />
+          <Burguer onClick={toggleMenu} />
           <ul id='itens_menu' className={`container_navbar_conteudo w-1/3 justify-start gap-6 items-center text-lg ml-[-300px]
             ${isMobile ? (menuVisivel ? 'flex' : 'hidden') : 'flex'}`}>  
             <li>
