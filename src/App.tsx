@@ -9,8 +9,9 @@ import Contatos from './pages/contatos/Contatos'
 import Cadastro from './pages/cadastro/Cadastro'
 import Login from './pages/login/Login'
 import { AuthProvider } from './contexts/AuthContext'
-import FormCategoria from './pages/categoria/formCategoria'
-
+import { Burguer } from './components/burger/burguerMenu'
+import ListaCategorias from './components/categoria/listacategorias/ListaCategorias'
+import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
 
 function App() {
 
@@ -27,7 +28,11 @@ function App() {
             <Route path="/contatos" element={<Contatos />} />
             <Route path="/formcadastro" element={<Cadastro />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/hamburguer" element={<Burguer />} />
+            <Route path="/categorias" element={<ListaCategorias />} />
+            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             <Route path="/formcategoria" element={<FormCategoria />} />
+
             </Routes>
             <Footer />
           </BrowserRouter>
