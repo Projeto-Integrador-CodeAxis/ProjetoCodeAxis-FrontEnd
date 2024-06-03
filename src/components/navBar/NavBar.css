@@ -66,6 +66,7 @@
 
     .container_navbar_conteudo {
         flex-direction: column;
+        text-align: center;
         margin: 15px;
         gap: 10px;
         animation: fadeIn 1s ease-in-out;
