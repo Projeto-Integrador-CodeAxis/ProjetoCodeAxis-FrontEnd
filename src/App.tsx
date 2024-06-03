@@ -12,6 +12,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { Burguer } from './components/burger/burguerMenu'
 import ListaCategorias from './components/categoria/listacategorias/ListaCategorias'
 import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
+import FormCategoria from './pages/categoria/formCategoria'
 
 function App() {
 
