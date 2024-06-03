@@ -2,7 +2,7 @@ import './NavBar.css'
 
 import Botao from "../botao/Botao"
 import { ReactNode, useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Burguer } from '../burger/burguerMenu';
 
@@ -71,17 +71,30 @@ function Navbar() {
           <Burguer onClick={toggleMenu} />
           <ul id='itens_menu' className={`container_navbar_conteudo w-1/3 justify-start gap-6 items-center text-lg ml-[-300px]
             ${isMobile ? (menuVisivel ? 'flex' : 'hidden') : 'flex'}`}>  
-            <li>
-              <a href="/" className='container_navbar_conteudo-link text-2xl'>CodeAxis</a>
-            </li>
 
+        <Link to = './'>
             <li>
-              <a href="/sobre" className="container_navbar_conteudo-link text-lg">Sobre</a>
+              <p  className='container_navbar_conteudo-link text-2xl'>CodeAxis</p>
             </li>
+            </Link>
 
+            <Link to = './sobre'>
             <li>
-              <a href="/contatos" className="container_navbar_conteudo-link text-lg">Contato</a>
+              <p  className="container_navbar_conteudo-link text-lg">Sobre</p>
             </li>
+            </Link>
+
+            <Link to = './contato'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg">Contato</p>
+            </li>
+            </Link>
+
+            <Link to = './formcategoria'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg">Nova categoria</p>
+            </li>
+            </Link>
 
             {botaoSair}
             
