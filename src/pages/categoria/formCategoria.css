@@ -1,0 +1,15 @@
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+
+.container_formcategoria_buttons {
+    display: flex; 
+} 
+
+.container_formcategoria_buttons a {
+    width: 40%; 
+} 
+
+.container_formcategoria_buttons button {
+    width: 40%; 
+} 
+}

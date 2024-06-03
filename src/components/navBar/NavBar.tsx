@@ -1,6 +1,4 @@
 import './NavBar.css'
-
-import Botao from "../botao/Botao"
 import { ReactNode, useContext, useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -43,12 +41,28 @@ function Navbar() {
 
     const {usuario, handleLogout} = useContext(AuthContext)
         
-    let botaoSair: ReactNode
+    let menuLogado: ReactNode
 
     if (usuario.token !=="" ){
-        botaoSair =(   <li>
+        menuLogado =(   
+          <>
+          <Link to = './formcategoria'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg">Nova categoria</p>
+            </li>
+            </Link>
+
+          <Link to = './categorias'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg">Categorias</p>
+            </li>
+            </Link>
+
+            <li>
               <a onClick={logout} href="/" className="container_navbar_conteudo-link text-lg">Sair</a>
             </li>
+
+            </>
         )
     }
 
@@ -62,14 +76,14 @@ function Navbar() {
 
     return (
       <>
-      <div className='container_navbar w-full text-white flex justify-around items-center py-2'>
-            <div className='container_navbar-logo flex justify-center align-center'>
+      <div className='container_navbar w-auto text-white flex justify-around items-center p-6  box-border '>
+            <div className='container_navbar-logo flex justify-center align-center w-18'>
               <img id='logo' src="https://ik.imagekit.io/4kqnwi1lux/Generation/ariah%20garcia%20(100%20x%2090%20px)%20(1).png?updatedAt=1716306994973" 
                         alt="Logo" className="w-full h-full object-cover"/>
             </div>
 
           <Burguer onClick={toggleMenu} />
-          <ul id='itens_menu' className={`container_navbar_conteudo w-1/3 justify-start gap-6 items-center text-lg ml-[-300px]
+          <ul id='itens_menu' className={`container_navbar_conteudo w-full justify-start gap-6 items-center text-lg
             ${isMobile ? (menuVisivel ? 'flex' : 'hidden') : 'flex'}`}>  
 
         <Link to = './'>
@@ -90,34 +104,11 @@ function Navbar() {
             </li>
             </Link>
 
-            <Link to = './formcategoria'>
-            <li>
-              <p className="container_navbar_conteudo-link text-lg">Nova categoria</p>
-            </li>
-            </Link>
-
-            <Link to = './categorias'>
-            <li>
-              <p className="container_navbar_conteudo-link text-lg">Categorias</p>
-            </li>
-            </Link>
-
-            {botaoSair}
+            {menuLogado}
             
           </ul>
               
-              <div className='container_navbar_botao flex justify-end text-lg'>
-                
-                <Botao
-                    texto="Entrar"
-                    link="/login"
-                    width={isMobile ? 100 : 200}
-                    height={isMobile ? 30 : 50}
-                    borderRadiusTopRight={25}
-                    borderRadiusBottomRight={25}
-                    borderRadiusTopLeft={25}
-                    borderRadiusBottomLeft={0}/>
-              </div>
+              
         </div>
       </>
     )

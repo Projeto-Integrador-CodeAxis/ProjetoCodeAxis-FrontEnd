@@ -28,15 +28,13 @@ function Login(){
   };
   }, []);
 
-  // até aqui eraa logica do botão
+  // até aqui e aa logica do botão
 
 
 
   const navigate = useNavigate()
 
-  const{usuario, handleLogin} = useContext(AuthContext)
-
-  const [isLoading] = useState<boolean>(false)
+  const {usuario, handleLogin, isLoading} = useContext(AuthContext)
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin> (
     {} as UsuarioLogin)
@@ -136,16 +134,16 @@ console.log(JSON.stringify(usuarioLogin.usuario))
                   <div className="">
                   <button
                       type="submit"
-                      className="w-[330px] h-[35px] rounded-lg
+                      className="w-[330px] h-[50px] rounded-lg
                             border-2 border-white text-white font-poppins font-semibold
-                            hover:border-prussian-blue"
+                            hover:border-prussian-blue flex items-center justify-center"
                       style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}>
 
                                 {isLoading ? <RotatingLines
                                     strokeColor="white"
                                     strokeWidth="5"
                                     animationDuration="0.75"
-                                    width="24"
+                                    width="20"
                                     visible={true}
                                 /> :
                                     <span>Entrar</span>

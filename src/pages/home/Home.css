@@ -45,6 +45,11 @@
         font-size: 25px;
         }
 
+        .container_navbar_botao {
+            display: flex;
+            justify-content: center;
+        }
+
         .container_home_textos-categorias p {
             font-size: 18px;
             margin-top: -25px;   

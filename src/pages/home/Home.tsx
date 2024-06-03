@@ -1,8 +1,33 @@
+import { useEffect, useState } from 'react';
+import Botao from '../../components/botao/Botao';
 import './Home.css'
 
 
 
 function Home() {
+
+const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
+
+useEffect(() => {
+    const handleResize = () => {
+    setIsMobile(window.matchMedia("(max-width: 500px)").matches);
+    };
+
+    // Adiciona o event listener para mudanças no tamanho da tela
+    window.addEventListener('resize', handleResize);
+
+    // Chama handleResize para verificar o tamanho da tela inicialmente
+    handleResize();
+
+    // Limpa o event listener quando o componente é desmontado
+    return () => {
+    window.removeEventListener('resize', handleResize);
+    };
+}, []);
+
+console.log("é mobile" + isMobile);
+
+
     return (
         <main className="container_home grid grid-cols-2 text-white text h-screen ">
             <div className="container_home_textos flex flex-col gap-y-32 px-32 justify-center">
@@ -10,10 +35,29 @@ function Home() {
                     <h1 className="text-6xl font-semibold font-poppins">Sua nova escola de tecnologia!</h1>
                 </div>
 
-                <div className="container_home_textos-button  mt-[-100px] flex  gap-x-9 justify-center">
-                <a href="/login" className='transition-opacity duration-300 hover:opacity-75'>Inicie agora</a>
-                <a href="/formcadastro" className='transition-opacity duration-300 hover:opacity-75'>Registre-se</a>
-                </div>
+                <div className='container_navbar_botao flex justify-start text-lg gap-x-9 mt-[-120px]'>
+                
+                <Botao
+                    texto="Entrar"
+                    link="/login"
+                    width={isMobile ? 100 : 200}
+                    height={isMobile ? 30 : 50}
+                    borderRadiusTopRight={25}
+                    borderRadiusBottomRight={25}
+                    borderRadiusTopLeft={25}
+                    borderRadiusBottomLeft={0}/>
+
+                <Botao
+                    texto="Registrar"
+                    link="/formcadastro"
+                    width={isMobile ? 100 : 200}
+                    height={isMobile ? 30 : 50}
+                    borderRadiusTopRight={25}
+                    borderRadiusBottomRight={0}
+                    borderRadiusTopLeft={25}
+                    borderRadiusBottomLeft={25}/>
+                    
+              </div>
 
                 <div className="container_home_textos-categorias flex flex-col text-xl gap-y-9">
                     <h2 className="font-poppins font-semibold">Nossas Categorias:</h2>

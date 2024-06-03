@@ -27,39 +27,39 @@ const AnimatedHamburgerButton: React.FC<AnimatedHamburgerButtonProps> = ({ onCli
 
   return (
     <MotionConfig
-      transition={{
-        duration: 0.5,
-        ease: 'easeInOut',
-      }}
+    transition={{
+      duration: 0.5,
+      ease: 'easeInOut',
+    }}
+  >
+    <motion.button
+      initial={false}
+      animate={active ? 'open' : 'closed'}
+      onClick={handleClick}
+      className="relative h-16 w-16 rounded-full bg-white/0 transition-colors hover:bg-white/20 mb-2"
     >
-      <motion.button
-        initial={false}
-        animate={active ? 'open' : 'closed'}
-        onClick={handleClick}
-        className="relative h-16 w-16 rounded-full bg-white/0 transition-colors hover:bg-white/20 mb-2"
-      >
-        <motion.span
-          variants={VARIANTS.top}
-          className="absolute h-1 w-10 bg-white"
-          style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
-        />
-        <motion.span
-          variants={VARIANTS.middle}
-          className="absolute h-1 w-10 bg-white"
-          style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
-        />
-        <motion.span
-          variants={VARIANTS.bottom}
-          className="absolute h-1 w-5 bg-white"
-          style={{
-            x: '-50%',
-            y: '50%',
-            bottom: '35%',
-            left: 'calc(50% + 10px)',
-          }}
-        />
-      </motion.button>
-    </MotionConfig>
+      <motion.span
+        variants={VARIANTS.top}
+        className="absolute h-1 w-10 bg-white"
+        style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
+      />
+      <motion.span
+        variants={VARIANTS.middle}
+        className="absolute h-1 w-10 bg-white"
+        style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
+      />
+      <motion.span
+        variants={VARIANTS.bottom}
+        className="absolute h-1 w-10 bg-white"
+        style={{
+          x: '-50%',
+          y: '50%',
+          bottom: '35%',
+          left: '50%',
+        }}
+      />
+    </motion.button>
+  </MotionConfig>
   );
 };
 
@@ -91,7 +91,7 @@ const VARIANTS = {
     closed: {
       rotate: ['45deg', '0deg', '0deg'],
       bottom: ['50%', '50%', '35%'],
-      left: 'calc(50% + 10px)',
+      left: '50%',
     },
   },
 };

@@ -11,6 +11,7 @@ interface BotaoProps {
   borderRadiusTopLeft: number;
   borderRadiusBottomLeft: number;
 
+
 }
 
 const Botao: React.FC<BotaoProps> = ({
@@ -22,6 +23,8 @@ const Botao: React.FC<BotaoProps> = ({
   borderRadiusBottomRight,
   borderRadiusTopLeft,
   borderRadiusBottomLeft,
+
+
   
 }) => {
 
@@ -41,6 +44,8 @@ const Botao: React.FC<BotaoProps> = ({
         borderBottomRightRadius: `${borderRadiusBottomRight}px`,
         borderTopLeftRadius: `${borderRadiusTopLeft}px`,
         borderBottomLeftRadius: `${borderRadiusBottomLeft}px`,
+        
+        
       
       }}
     >

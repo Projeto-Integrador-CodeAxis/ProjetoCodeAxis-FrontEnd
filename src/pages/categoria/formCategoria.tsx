@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext"
 import Categoria from "../../models/Categoria"
 import { atualizar, buscar, cadastrar } from "../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
+import "./formCategoria.css"
 
 
 
@@ -104,7 +105,7 @@ function FormCategoria() {
         <section className="container_cadastro flex flex-row text-white text h-screen w-screen">
             <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">
                 <div >
-                    <h1 className="text-6xl font-semibold font-poppins text-center">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
+                    <h1 className="text-5xl font-semibold font-poppins text-center">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
                 </div>
 
                 
@@ -139,17 +140,19 @@ function FormCategoria() {
 
                     
 
-                    <div className="flex flex-row justify-center items-center gap-4 w-[70%]">
+                    <div className="container_formcategoria_buttons flex flex-row justify-center items-center gap-4 w-[70%]">
                             
-                            <Link to='/categorias'>
-                                <button className="w-[330px] rounded-lg
+                            
+                    <Link to="/categorias" className="w-1/2 rounded-lg
                                     border-2 border-white text-white font-poppins font-semibold
-                                    hover:border-prussian-blue h-12"
-                                    style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}>Cancelar</button>
-                            </Link>
+                                    hover:border-prussian-blue h-12 flex items-center justify-center"
+                                    style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}>
+                                    Cancelar
+                    </Link>
+                            
                             <button
                                 type='submit'
-                                className="w-[330px] h-12 rounded-lg
+                                className="w-1/2 h-12 rounded-lg
                                 border-2 border-white text-white font-poppins font-semibold
                                 hover:border-prussian-blue justify-center items-center flex"
                                 disabled = {carregandoCategoria}

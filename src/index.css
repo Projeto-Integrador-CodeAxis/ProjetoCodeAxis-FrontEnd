@@ -4,3 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 :root{background-color: radial-gradient(circle, rgba(8,45,69,1) 0%, rgba(0,0,0,0,1) 100%)}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+}

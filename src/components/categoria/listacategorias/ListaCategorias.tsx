@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react"
-import { DNA } from "react-loader-spinner"
+import { ThreeDots } from "react-loader-spinner"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar } from "../../../services/Service"
@@ -42,17 +42,21 @@ function ListaCategorias() {
 
     return (
         <>
-        {/* Substituir spinner */}
+        
+
+        <div className="flex justify-center w-full my-4"> 
         {categorias.length === 0 && (
-            <DNA
+            <ThreeDots 
             visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
+            height="80"
+            width="80"
+            ariaLabel="three-dots-loading"
+            wrapperClass="three-dots-wrapper mx-auto"
+            color="#1e9bebff"
         />
         )}
+
+</div>
         
             <div className="flex justify-center w-full my-4 h-full">
                 <div className="container flex flex-col">
@@ -67,6 +71,7 @@ function ListaCategorias() {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
