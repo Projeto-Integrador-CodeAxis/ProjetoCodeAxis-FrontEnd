@@ -1,7 +1,30 @@
 import "./Contatos.css";
 import Botao from "../../components/botao/Botao";
+import { useEffect, useState } from "react";
 
 function Contatos() {
+
+  const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
+
+  useEffect(() => {
+  const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 500px)").matches);
+  };
+
+    // Adiciona o event listener para mudanças no tamanho da tela
+  window.addEventListener('resize', handleResize);
+
+    // Chama handleResize para verificar o tamanho da tela inicialmente
+  handleResize();
+
+    // Limpa o event listener quando o componente é desmontado
+  return () => {
+      window.removeEventListener('resize', handleResize);
+  };
+  }, []);
+
+
+  
   return (
     <>
       <div className="flex flex-row min-h-screen px-36 min-w-screen">
@@ -16,9 +39,17 @@ function Contatos() {
             nobis laborum sunt pariatur deserunt! Saepe error dolor expedita
             dignissimos illum natus dolorum commodi.
           </p>
+ 
 
-        <Botao texto="Repositório" link="https://github.com/Projeto-Integrador-CodeAxis" 
-        width={150} height= {50} />
+                <Botao  
+                    texto={'Repositorio'}
+                    link="https://github.com/Projeto-Integrador-CodeAxis"
+                    width={isMobile ? 100 : 200}
+                    height={isMobile ? 30 : 50}
+                    borderRadiusTopRight={25}
+                    borderRadiusBottomRight={25}
+                    borderRadiusTopLeft={25}
+                    borderRadiusBottomLeft={0}/>
         
         </div>
 

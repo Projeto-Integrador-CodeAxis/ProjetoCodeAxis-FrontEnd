@@ -1,3 +1,19 @@
-.gradient{
-    background-color: radial-gradient(circle, rgba(8,45,69,1) 0%, rgba(0,0,0,0,1) 100%);
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    .container_footer {
+        margin-top: 50px;
+    }
+
+    .container_footer_textos h6 {
+        font-size: 15px;
+        
+    }
+
+    .container_footer_textos p {
+        font-size: 13px;
+        
+    }
+
+    .container_footer_icon-icon {
+        width: 25px;
+    }
 }

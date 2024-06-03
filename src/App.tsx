@@ -9,13 +9,14 @@ import Contatos from './pages/contatos/Contatos'
 import Cadastro from './pages/cadastro/Cadastro'
 import Login from './pages/login/Login'
 import { AuthProvider } from './contexts/AuthContext'
+import { Burguer } from './components/burger/burguerMenu'
 
 function App() {
 
   return (
     <>
       <div className='gradient h-screen w-screen'>
-     
+    
         <AuthProvider>
           <BrowserRouter>
             <Navbar />
@@ -23,8 +24,9 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/" element={<Home />} />
             <Route path="/contatos" element={<Contatos />} />
-            <Route path="/FormCadastro" element={<Cadastro />} />
+            <Route path="/formcadastro" element={<Cadastro />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/hamburguer" element={<Burguer />} />
             </Routes>
             <Footer />
           </BrowserRouter>

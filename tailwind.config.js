@@ -5,7 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      '350-450': {'min': '350px', 'max': '450px'},
+    },
     colors: {
       'prussian-blue': '#082d45ff',
       'cerulean': '#097192ff',

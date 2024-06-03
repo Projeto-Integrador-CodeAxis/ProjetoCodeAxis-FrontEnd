@@ -1,0 +1,61 @@
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+
+
+    .container_cadastro {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container_cadastro_textos {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 50px;
+    } 
+
+    .container_cadastro_textos h1{
+        font-size: 25px;
+        padding: 8px;
+    }
+    .container_cadastro_textos-categorias h2 {
+        font-size: 25px;
+    }
+
+    .container_cadastro_textos-categorias p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .container_cadastro_form { 
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        margin-top: -50px;
+        width: auto;
+    
+    }
+
+    .container_cadastro_form-formulario{
+        width: 80%;
+        
+
+    }
+
+    .container_cadastro_form-formulario h1{
+        font-size: 25px;
+        text-align: center;
+        
+
+    }
+
+    .container_cadastro_form-formulario button{
+        font-size: 15px;
+        text-align: center;
+        width: 150px;
+        
+
+    }
+    
+}

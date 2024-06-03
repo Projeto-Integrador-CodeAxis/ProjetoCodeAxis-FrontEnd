@@ -2,14 +2,40 @@ import {useNavigate } from "react-router-dom"
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
-import { RotatingLines } from "react-loader-spinner";
 import Botao from "../../components/botao/Botao";
+import './Login.css'
+import { RotatingLines } from "react-loader-spinner";
+
 
 function Login(){
+
+  const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
+
+  useEffect(() => {
+  const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 500px)").matches);
+  };
+
+    // Adiciona o event listener para mudanças no tamanho da tela
+  window.addEventListener('resize', handleResize);
+
+    // Chama handleResize para verificar o tamanho da tela inicialmente
+  handleResize();
+
+    // Limpa o event listener quando o componente é desmontado
+  return () => {
+      window.removeEventListener('resize', handleResize);
+  };
+  }, []);
+
+  // até aqui eraa logica do botão
+
+
+
   const navigate = useNavigate()
 
   const{usuario, handleLogin} = useContext(AuthContext)
- 
+
   const [isLoading] = useState<boolean>(false)
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin> (
@@ -17,7 +43,7 @@ function Login(){
 
   useEffect(() => {
     if(usuario.token !== ''){
-        navigate("/home")
+        navigate("/")
     }
 }, [usuario])
 
@@ -36,10 +62,11 @@ function Login(){
 console.log(JSON.stringify(usuarioLogin.usuario))
 
 
+
         return (
           <>
-            <div className="flex flex-row min-h-screen px-36 min-w-screen">
-              <div className="flex flex-col justify-center item-center w-2/3 p-6">
+            <div className="container_login flex flex-row px-36 h-full ">
+              <div className="container_login_textos flex flex-col justify-center item-center w-2/3 p-6">
                 <h1 className="text-white font-poppins font-semibold text-6xl mb-6">
                   Sua nova escola de tecnologia!
                 </h1>
@@ -49,18 +76,21 @@ console.log(JSON.stringify(usuarioLogin.usuario))
                   termino de Bootcamp Generation Brasil
                 </p>
 
-                <Botao texto="Registre-se" link="https://github.com/Projeto-Integrador-CodeAxis" 
-                    width={150} height= {50} 
-                    borderRadiusTopRight ={25}
-                    borderRadiusBottomRight= {25}
-                    borderRadiusTopLeft = {25}
+                <Botao
+                    texto={'Login'}
+                    link="/login"
+                    width={isMobile ? 100 : 200}
+                    height={isMobile ? 30 : 50}
+                    borderRadiusTopRight={25}
+                    borderRadiusBottomRight={25}
+                    borderRadiusTopLeft={25}
                     borderRadiusBottomLeft={0}/>
               </div>
 
-              <div className="min-h-screen flex items-center justify-center p-4 w-1/2">
+              <div className="container_login_form flex items-center justify-center p-4 w-1/2">
                 <form
-                  className=" bg-celestial-blue flex flex-col justify-center 
-                  items-center p-8 width-450 h-96 rounded-3xl shadow-white"
+                  className="container_login_form-forulario bg-celestial-blue flex flex-col justify-center 
+                  items-center p-8 rounded-3xl shadow-white"
                   onSubmit={login}>
                   <h1 className="text-white font-poppins font-semibold text-2xl mb-6">
                     Preencha seus dados:
@@ -111,16 +141,15 @@ console.log(JSON.stringify(usuarioLogin.usuario))
                             hover:border-prussian-blue"
                       style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}>
 
-                          {isLoading ?
-                          <RotatingLines
-                            strokeColor='white'
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                          />:
-                          <span>Entrar</span>
-                          }
+                                {isLoading ? <RotatingLines
+                                    strokeColor="white"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="24"
+                                    visible={true}
+                                /> :
+                                    <span>Entrar</span>
+                                }
                         
                     </button>
                   </div>

@@ -1,0 +1,85 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container_navbar_conteudo-link {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.5s;
+}
+
+.container_navbar_conteudo-link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 33.33%; 
+    border-bottom: 2px solid #1e9bebff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.container_navbar_conteudo-link:hover {
+    color: #1e9bebff; 
+}
+
+.container_navbar_conteudo-link:hover::before {
+    transform: scaleX(1);
+}
+
+
+.hover\:text-celestial-blue:hover {
+    color: #1e9bebff;
+}
+
+#burguer {
+    display: none;
+}
+
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    
+    #logo {
+        width: 100%;
+        height: 100%;
+    }
+    .container_navbar-logo {
+        display: flex;
+        justify-content: center;
+    }
+    .container_navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container_navbar_conteudo {
+        flex-direction: column;
+        margin: 15px;
+        gap: 10px;
+        animation: fadeIn 1s ease-in-out;
+
+    }
+
+    #burguer {  
+        display: block;
+        cursor: pointer;
+    }
+
+    #burguer:hover { 
+        color: #1e9bebff ;
+
+    }
+
+}

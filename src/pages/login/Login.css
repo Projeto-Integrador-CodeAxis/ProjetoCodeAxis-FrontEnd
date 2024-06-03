@@ -1,0 +1,40 @@
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+
+
+    .container_login {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 25px;
+    } 
+
+    .container_login_textos {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .container_login_textos h1 {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .container_login_textos p {
+        text-align: center;
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .container_login_form {  
+        margin-top: 50px;
+        width: 100%;
+        height: 400px;
+    
+    }
+
+    .container_login_form-forulario {
+        width: 100%;
+    }
+}

@@ -3,8 +3,34 @@ import { useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import Botao from "../../components/botao/Botao";
+import "./Cadastro.css"
 
 function Cadastro(){
+
+    const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
+
+    useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.matchMedia("(max-width: 500px)").matches);
+    };
+
+      // Adiciona o event listener para mudanças no tamanho da tela
+    window.addEventListener('resize', handleResize);
+
+      // Chama handleResize para verificar o tamanho da tela inicialmente
+    handleResize();
+
+      // Limpa o event listener quando o componente é desmontado
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+    }, []);
+
+    // até aqui eraa logica do botão
+
+
+    
     const navigate = useNavigate()
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -37,15 +63,15 @@ function Cadastro(){
         setConfirmaSenha(e.target.value);
     }
 
-     async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
+    async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
 
         e.preventDefault();
     
         if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
     
-          setIsLoading(true)
+        setIsLoading(true)
     
-          try {
+        try {
     
             await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
             alert('Usuário cadastrado com sucesso!');
@@ -66,29 +92,48 @@ function Cadastro(){
     
     return (
         <>
-            <section className="flex flex-row text-white text h-screen w-screen">
-            <div className="flex flex-col gap-y-32 px-32 justify-center w-2/3">
+        <section className="container_cadastro flex flex-row text-white text h-screen w-screen">
+            <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">
                 <div >
                     <h1 className="text-6xl font-semibold font-poppins text-center">Sua nova escola de tecnologia!</h1>
                 </div>
 
-                <div className="flex  gap-x-9 justify-center">
-                <button className="rounded-tl-full rounded-tr-full rounded-br-full flex justify-center items-center gap-3 p-2  w-60 h-16 bg-black text-white">Fazer Login</button>
-                    <button className="rounded-tl-full rounded-tr-full rounded-bl-full flex justify-center items-center gap-3 p-2 w-60 bg-custom-blue text-white">Pagina inicial</button>
+                <div className="flex gap-x-9 justify-center">
+                <Botao
+                    texto={isMobile ? "Login" : "Fazer Login"}
+                    link="/login"
+                    width={isMobile ? 100 : 200}
+                    height={isMobile ? 30 : 50}
+                    borderRadiusTopRight={25}
+                    borderRadiusBottomRight={25}
+                    borderRadiusTopLeft={25}
+                    borderRadiusBottomLeft={0}/>
+                <Botao
+                    texto={isMobile ? "Inicio" : "Pagina Inicial"}
+                    link="/"
+                    width={isMobile ? 100 : 200}
+                    height={isMobile ? 30 : 50}
+                    borderRadiusTopRight={25}
+                    borderRadiusBottomRight={0}
+                    borderRadiusTopLeft={25}
+                    borderRadiusBottomLeft={25}/>
                 </div>
 
-                <div className="flex flex-col text-xl gap-y-9 pl-[5%]">
+                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 pl-[5%]">
                     <h2 className="font-poppins font-semibold">Nossas Categorias:</h2>
                     <p className="font-sans">JavaScript</p>
                 </div>
             </div>
 
-            <div className="flex h-screen w-1/2 justify-center items-center">
-                
-                <form className="text-black flex flex-col justify-center items-center bg-celestial-blue min-w-96 w-3/5 h-2/3 rounded-2xl gap-y-6" onSubmit={cadastrarNovoUsuario}>
+            <div className="container_cadastro_form flex h-screen w-1/2 justify-center items-center">
+            
+            
+            <form className="container_cadastro_form-formulario text-black flex flex-col justify-center items-center 
+            bg-celestial-blue w-3/5
+            rounded-2xl gap-y-8 box-border p-4 shadow-white" onSubmit={cadastrarNovoUsuario}>
                 <h1 className="text-white font-poppins font-semibold text-2xl mb-6">
                     Preencha seus dados:
-                  </h1>
+                </h1>
                     <div className="flex w-full justify-center">
                         <input
                             id="nome"
@@ -178,8 +223,9 @@ function Cadastro(){
                                 }
                             </button>
                     </div>
-
-                </form>
+            
+            </form>
+            
             </div>
         </section>
         </>
