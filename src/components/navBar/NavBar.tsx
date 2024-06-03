@@ -96,6 +96,12 @@ function Navbar() {
             </li>
             </Link>
 
+            <Link to = './categorias'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg">Categorias</p>
+            </li>
+            </Link>
+
             {botaoSair}
             
           </ul>
