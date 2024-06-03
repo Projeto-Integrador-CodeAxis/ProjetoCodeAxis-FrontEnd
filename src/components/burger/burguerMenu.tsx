@@ -1,86 +1,97 @@
-import { useState } from "react";
-import { MotionConfig, animate, motion } from "framer-motion";
+import React, { useState } from 'react';
+import { MotionConfig, motion } from 'framer-motion';
 
-export const Burguer = () => {
+interface BurguerProps {
+onClick: () => void;
+}
+
+export const Burguer: React.FC<BurguerProps> = ({ onClick }) => {
 return (
-    <div className="grid h-100px place-content-center bg-gradient-to-br from-violet-500 to-indigo-500">
-    <AnimatedHamburgerButton />
+    <div id="burguer" className="grid h-100px place-content-center bg-gradient-to-br from-violet-500 to-indigo-500">
+        <AnimatedHamburgerButton onClick={onClick} />
     </div>
-);
+    );
 };
 
-const AnimatedHamburgerButton = () => {
-const [active, setActive] = useState(false);
-return (
+interface AnimatedHamburgerButtonProps {
+  onClick: () => void;
+}
+
+const AnimatedHamburgerButton: React.FC<AnimatedHamburgerButtonProps> = ({ onClick }) => {
+  const [active, setActive] = useState(false);
+
+  const handleClick = () => {
+    setActive((prev) => !prev);
+    onClick(); // Chama a função passada via props
+  };
+
+  return (
     <MotionConfig
-    transition={{
+      transition={{
         duration: 0.5,
-        ease: "easeInOut",
-    }}
+        ease: 'easeInOut',
+      }}
     >
-    <motion.button
+      <motion.button
         initial={false}
-        animate={active ? "open" : "closed"}
-        onClick={() => setActive((pv) => !pv)}
-        className="relative h-14 w-14 rounded-full bg-white/0 transition-colors hover:bg-white/20"
-    >
+        animate={active ? 'open' : 'closed'}
+        onClick={handleClick}
+        className="relative h-16 w-16 rounded-full bg-white/0 transition-colors hover:bg-white/20 mb-2"
+      >
         <motion.span
-        variants={VARIANTS.top}
-        className="absolute h-1 w-10 bg-white"
-        style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
+          variants={VARIANTS.top}
+          className="absolute h-1 w-10 bg-white"
+          style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }}
         />
         <motion.span
-        variants={VARIANTS.middle}
-        className="absolute h-1 w-10 bg-white"
-        style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+          variants={VARIANTS.middle}
+          className="absolute h-1 w-10 bg-white"
+          style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }}
         />
         <motion.span
-        variants={VARIANTS.bottom}
-        className="absolute h-1 w-5 bg-white"
-        style={{
-            x: "-50%",
-            y: "50%",
-            bottom: "35%",
-            left: "calc(50% + 10px)",
-        }}
+          variants={VARIANTS.bottom}
+          className="absolute h-1 w-5 bg-white"
+          style={{
+            x: '-50%',
+            y: '50%',
+            bottom: '35%',
+            left: 'calc(50% + 10px)',
+          }}
         />
-    </motion.button>
+      </motion.button>
     </MotionConfig>
-
-
-);
+  );
 };
-
 
 const VARIANTS = {
-top: {
+  top: {
     open: {
-    rotate: ["0deg", "0deg", "45deg"],
-    top: ["35%", "50%", "50%"],
+      rotate: ['0deg', '0deg', '45deg'],
+      top: ['35%', '50%', '50%'],
     },
     closed: {
-    rotate: ["45deg", "0deg", "0deg"],
-    top: ["50%", "50%", "35%"],
+      rotate: ['45deg', '0deg', '0deg'],
+      top: ['50%', '50%', '35%'],
     },
-},
-middle: {
+  },
+  middle: {
     open: {
-    rotate: ["0deg", "0deg", "-45deg"],
+      rotate: ['0deg', '0deg', '-45deg'],
     },
     closed: {
-    rotate: ["-45deg", "0deg", "0deg"],
+      rotate: ['-45deg', '0deg', '0deg'],
     },
-},
-bottom: {
+  },
+  bottom: {
     open: {
-    rotate: ["0deg", "0deg", "45deg"],
-    bottom: ["35%", "50%", "50%"],
-    left: "50%",
+      rotate: ['0deg', '0deg', '45deg'],
+      bottom: ['35%', '50%', '50%'],
+      left: '50%',
     },
     closed: {
-    rotate: ["45deg", "0deg", "0deg"],
-    bottom: ["50%", "50%", "35%"],
-    left: "calc(50% + 10px)",
+      rotate: ['45deg', '0deg', '0deg'],
+      bottom: ['50%', '50%', '35%'],
+      left: 'calc(50% + 10px)',
     },
-},
+  },
 };

@@ -31,6 +31,8 @@ function App() {
             <Route path="/hamburguer" element={<Burguer />} />
             <Route path="/categorias" element={<ListaCategorias />} />
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+            <Route path="/formcategoria" element={<FormCategoria />} />
+
             </Routes>
             <Footer />
           </BrowserRouter>
