@@ -12,6 +12,8 @@ import { AuthProvider } from './contexts/AuthContext'
 import ListaCategorias from './components/categoria/listacategorias/ListaCategorias'
 import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
 import FormCategoria from './pages/categoria/formCategoria'
+import Aulas from './pages/aulas/Aulas'
+
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
             <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
             <Route path="/formcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+            <Route path="/aulas" element={<Aulas />} />
+            
             </Routes>
             <Footer />
           </BrowserRouter>

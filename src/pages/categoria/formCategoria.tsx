@@ -95,7 +95,7 @@ function FormCategoria() {
 
     console.log(JSON.stringify(categoria))
     console.log(token)
-   
+
     const carregandoCategoria = categoria.categoria === '';
     
 
