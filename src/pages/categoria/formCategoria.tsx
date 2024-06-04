@@ -8,7 +8,7 @@ import "./formCategoria.css"
 
 
 
-function FormCategoria() {
+function FormCategoria() { 
 
 
     const navigate = useNavigate()
