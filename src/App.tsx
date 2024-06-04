@@ -15,6 +15,8 @@ import FormCategoria from './pages/categoria/formCategoria'
 import ListarCurso from './components/cursos/listarcursos/ListarCurso'
 import FormCurso from './components/cursos/formcursos/FormCurso'
 import DeletarCurso from './components/cursos/deletarcursos/DeletarCurso'
+import Aulas from './pages/aulas/Aulas'
+
 
 function App() {
 
@@ -39,6 +41,8 @@ function App() {
             <Route path="/formcurso" element={<FormCurso />} />
             <Route path="/editarcurso/:id" element={<FormCurso />} />
             <Route path="/deletarcurso/:id" element={<DeletarCurso />} />
+            <Route path="/aulas" element={<Aulas />} />
+            
             </Routes>
             <Footer />
           </BrowserRouter>

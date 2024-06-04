@@ -70,6 +70,12 @@ function Navbar() {
             </li>
             </Link>
 
+            <Link to = './aulas'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg">Aulas</p>
+            </li>
+            </Link>
+
             <li>
               <a onClick={logout} href="/" className="container_navbar_conteudo-link text-lg">Sair</a>
             </li>
@@ -110,7 +116,7 @@ function Navbar() {
             </li>
             </Link>
 
-            <Link to = './contato'>
+            <Link to = './contatos'>
             <li>
               <p className="container_navbar_conteudo-link text-lg">Contato</p>
             </li>
