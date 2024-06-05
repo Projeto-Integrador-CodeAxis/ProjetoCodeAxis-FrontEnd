@@ -65,18 +65,18 @@ console.log("é mobile" + isMobile);
                 </div>
             </div>
 
-            <div className="container_home_fotos flex overflow-hidden h-screen justify-end mr-[150px]">
-                <div className="container_home_fotos-1 flex flex-col items-center gap-y-4">
+            <div className="container_home_fotos flex  h-screen justify-center items-center">
+                <div className="container_home_fotos-1 flex flex-col items-center gap-y-4 overflow-hidden">
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%201.png?updatedAt=1716308378516" alt="" />
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%206.png?updatedAt=1716308378584" alt="" />
                 </div>
 
-                <div className="container_home_fotos-2 flex flex-col items-center justify-end gap-y-[26px]">
+                <div className="container_home_fotos-2 flex flex-col items-center justify-end gap-y-[26px] pb-24">
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%202.png?updatedAt=1716308378682" alt="" />
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%203.png?updatedAt=1716308378886" alt="" />
                 </div>
 
-                <div className="container_home_fotos-3 flex flex-col items-center gap-y-[24px]">
+                <div className="container_home_fotos-3 flex flex-col items-center gap-y-[24px] overflow-hidden">
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%204.png?updatedAt=1716308378509" alt="" />
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%205.png?updatedAt=1716308378518" alt="" />
                 </div>
