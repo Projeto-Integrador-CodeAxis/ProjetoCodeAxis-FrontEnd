@@ -139,10 +139,10 @@ function FormCurso() {
                 </div>
             </div>
 
-            <div className="container_cadastro_form flex h-screen w-1/2 justify-center items-center">
+            <div className="container_cadastro_form flex w-1/2 h-full justify-center items-center">
             
-            <form className="container_cadastro_form-formulario text-black flex flex-col justify-center items-center 
-            bg-celestial-blue w-3/5 rounded-2xl gap-y-8 box-border p-4 shadow-white py-10"
+            <form className="container_cadastro_form-formulario text-black flex flex-col h-full justify-center items-center 
+            bg-celestial-blue w-3/5 rounded-2xl gap-y-2 box-border p-4 shadow-white py-10"
             onSubmit={gerarNovoCurso} >
                 <h1 className="text-white font-poppins font-semibold text-2xl">
                     Insira seu curso:
@@ -153,7 +153,7 @@ function FormCurso() {
                             name="titulo"
                             placeholder="Titulo"
                             required
-                            className="w-[80%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            className="w-[80%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                             placeholder-font-poppins border-2 border-white shadow "
                             value={curso.titulo}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -165,7 +165,7 @@ function FormCurso() {
                             name="descricao"
                             placeholder="Descricao"
                             required
-                            className="w-[80%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            className="w-[80%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                             placeholder-font-poppins border-2 border-white shadow "
                             value={curso.descricao}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -177,7 +177,7 @@ function FormCurso() {
                             name="autor"
                             placeholder="Autor"
                             required
-                            className="w-[80%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            className="w-[80%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                             placeholder-font-poppins border-2 border-white shadow "
                             value={curso.autor}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -189,7 +189,7 @@ function FormCurso() {
                             name="link"
                             placeholder="Link"
                             required
-                            className="w-[80%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            className="w-[80%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                             placeholder-font-poppins border-2 border-white shadow "
                             value={curso.link}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -201,7 +201,7 @@ function FormCurso() {
                             name="valor"
                             placeholder="Valor"
                             required
-                            className="w-[80%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            className="w-[80%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                             placeholder-font-poppins border-2 border-white shadow "
                             value={curso.valor}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -213,15 +213,19 @@ function FormCurso() {
                             name="imagem"
                             placeholder="Imagem"
                             required
-                            className="w-[80%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            className="w-[80%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
                             placeholder-font-poppins border-2 border-white shadow "
                             value={curso.imagem}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                   </div> 
-                  <div className="flex flex-col gap-2">
-                        <select name="categoria" id="categoria" className='w-[100%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                            placeholder-font-poppins border-2 border-white shadow' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+                  <div className="flex flex-col gap-2 w-[80%]">
+                        <select
+                          name="categoria" 
+                          id="categoria" 
+                          className='w-[100%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            placeholder-font-poppins border-2 border-white shadow' 
+                            onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
                             <option value="" selected disabled>Selecione uma Categoria</option>
                             {categorias.map((categoria) => (
                             <>

@@ -66,18 +66,18 @@ console.log("é mobile" + isMobile);
 
             <div className="container_home_fotos flex  overflow-hidden h-screen justify-end mr-[150px]">
                 <div className="container_home_fotos-1 flex flex-col items-center gap-y-4">
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%201.png?updatedAt=1716308378516" alt="" />
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%206.png?updatedAt=1716308378584" alt="" />
+                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/3.png?updatedAt=1717597935180" alt="" />
+                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/5.png?updatedAt=1717597936471" alt="" />
                 </div>
 
                 <div className="container_home_fotos-2 flex flex-col items-center justify-end gap-y-[26px]">
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%202.png?updatedAt=1716308378682" alt="" />
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%203.png?updatedAt=1716308378886" alt="" />
+                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/2.png?updatedAt=1717599449387" alt="" />
+                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/1.png?updatedAt=1717597852633" alt="" />
                 </div>
 
                 <div className="container_home_fotos-3 flex flex-col items-center gap-y-[24px]">
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%204.png?updatedAt=1716308378509" alt="" />
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%205.png?updatedAt=1716308378518" alt="" />
+                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/6.png?updatedAt=1717597936824" alt="" />
+                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/4.png?updatedAt=1717599615912" alt="" />
                 </div>
             </div>
         </main>

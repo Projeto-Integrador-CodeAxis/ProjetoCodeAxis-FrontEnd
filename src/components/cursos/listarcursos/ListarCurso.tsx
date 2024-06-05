@@ -62,11 +62,11 @@ function ListarCurso() {
                 <div className="container flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
                         <>
-                            {curso.map((curso) => (
-                                <>
-                                    <CardCurso key={curso.id} curso={curso} />
-                                </>
-                            ))}
+                                    {curso.map(curso => 
+                            curso.usuario?.id === usuario.id ? (
+                                <CardCurso key={curso.id} curso={curso} />
+                            ) : null
+                        )}
                         </>
                     </div>
                 </div>
