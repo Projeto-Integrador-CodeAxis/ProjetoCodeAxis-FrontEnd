@@ -10,8 +10,12 @@ function Footer(){
                     <p>Entre em contato e conheça os nossos projetos</p>
                 </div>
                 <div className="container_footer_icon flex flex-space-x-1.5 gap-2">
+                <a href="https://github.com/Projeto-Integrador-CodeAxis" target="_blank">
                     <GithubLogo className="container_footer_icon-icon transition-opacity duration-300 hover:opacity-75" size={32} color="#ffffff" alt="Logo GitHub" />
+                </a>
+                <a href="mailto:codeaxis3@gmail.com">
                     <EnvelopeSimple className="container_footer_icon-icon transition-opacity duration-300 hover:opacity-75" size={32} color="#ffffff" alt="Logo e-mail" />
+                </a>
                 </div>
             </div>
         

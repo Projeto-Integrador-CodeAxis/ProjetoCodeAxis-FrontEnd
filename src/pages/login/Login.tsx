@@ -57,26 +57,21 @@ function Login(){
       handleLogin(usuarioLogin)
   }
 
-console.log(JSON.stringify(usuarioLogin.usuario))
-
-
-
         return (
           <>
-            <div className="container_login flex flex-row px-36 h-full ">
+            <div className="container_login flex flex-row px-36 h-full pl-20">
               <div className="container_login_textos flex flex-col justify-center item-center w-2/3 p-6">
                 <h1 className="text-white font-poppins font-semibold text-6xl mb-6">
                   Sua nova escola de tecnologia!
                 </h1>
 
                 <p className="text-white font-sans font-light text-xl mb-8">
-                  Plataforma de cursos desenvolvida pelo grupo 01 para fins de
-                  termino de Bootcamp Generation Brasil
+                Bem-vindo ao CodeAxis: Acesse sua conta e transforme seu futuro com nossos cursos de tecnologia.
                 </p>
 
                 <Botao
-                    texto={'Login'}
-                    link="/login"
+                    texto={'Voltar'}
+                    link="/"
                     width={isMobile ? 100 : 200}
                     height={isMobile ? 30 : 50}
                     borderRadiusTopRight={25}

@@ -30,12 +30,12 @@ console.log("é mobile" + isMobile);
 
     return (
         <main className="container_home grid grid-cols-2 text-white text h-screen ">
-            <div className="container_home_textos flex flex-col gap-y-32 px-32 justify-center">
+            <div className="container_home_textos flex flex-col gap-y-20 px-32 justify-center">
                 <div className='container_home_textos-h1' >
-                    <h1 className="text-6xl font-semibold font-poppins">Sua nova escola de tecnologia!</h1>
+                    <h1 className="text-6xl font-semibold font-poppins pb-20">Sua nova escola de tecnologia!</h1>
                 </div>
 
-                <div className='container_navbar_botao flex justify-start text-lg gap-x-9 mt-[-120px]'>
+                <div className='container_navbar_botao flex justify-start text-lg gap-x-9 mt-[-120px] pt-10'>
                 
                 <Botao
                     texto="Entrar"
@@ -59,13 +59,12 @@ console.log("é mobile" + isMobile);
                     
               </div>
 
-                <div className="container_home_textos-categorias flex flex-col text-xl gap-y-9">
-                    <h2 className="font-poppins font-semibold">Nossas Categorias:</h2>
-                    <p className="font-sans">JavaScript</p>
+                <div className="container_home_textos-categorias flex flex-col text-xl mt-1 ">
+                    <h2 className="font-poppins font-semibold ">Promovendo inclusão digital através da educação.</h2>
                 </div>
             </div>
 
-            <div className="container_home_fotos flex overflow-hidden h-screen justify-end mr-[150px]">
+            <div className="container_home_fotos flex  overflow-hidden h-screen justify-end mr-[150px]">
                 <div className="container_home_fotos-1 flex flex-col items-center gap-y-4">
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%201.png?updatedAt=1716308378516" alt="" />
                     <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/Rectangle%206.png?updatedAt=1716308378584" alt="" />

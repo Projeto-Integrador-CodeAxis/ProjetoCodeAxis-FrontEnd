@@ -11,7 +11,7 @@ function Navbar() {
 
   const toggleMenu = () => {
     setMenuVisivel(!menuVisivel); 
-    console.log(menuVisivel)
+    
   };
 
 
@@ -33,8 +33,6 @@ function Navbar() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  console.log("é mobile" + isMobile);
 
 // logica para o botão sair aparecer apenas quando logado
   const navigate = useNavigate()

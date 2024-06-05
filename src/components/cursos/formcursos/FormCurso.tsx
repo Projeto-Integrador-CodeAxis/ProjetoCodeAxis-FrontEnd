@@ -131,21 +131,20 @@ function FormCurso() {
         <section className="container_cadastro flex flex-row text-white text h-screen w-screen">
             <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">
                 <div >
-                    <h1 className="text-5xl font-semibold font-poppins text-center pr-20">{id !== undefined ? 'Editar Curso' : 'Cadastrar Curso'}</h1>
+                    <h1 className="text-5xl font-semibold font-poppins text-left pl-2">{id !== undefined ? 'Editar Curso' : 'Cadastrar Curso'}</h1>
                 </div>
 
-                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 pl-[5%]">
-                    <h2 className="font-poppins font-semibold">Nossas Categorias:</h2>
-                    <p className="font-sans">JavaScript</p>
+                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 ">
+                    <h2 className="font-poppins font-semibold">Cadastre novas categorias de cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
                 </div>
             </div>
 
             <div className="container_cadastro_form flex h-screen w-1/2 justify-center items-center">
             
             <form className="container_cadastro_form-formulario text-black flex flex-col justify-center items-center 
-            bg-celestial-blue w-3/5 rounded-2xl gap-y-4 box-border p-4 shadow-white"
+            bg-celestial-blue w-3/5 rounded-2xl gap-y-8 box-border p-4 shadow-white py-10"
             onSubmit={gerarNovoCurso} >
-                <h1 className="text-white font-poppins font-semibold text-2xl mb-6">
+                <h1 className="text-white font-poppins font-semibold text-2xl">
                     Insira seu curso:
                 </h1>
                 <div className="flex w-full justify-center">
@@ -221,8 +220,8 @@ function FormCurso() {
                         />
                   </div> 
                   <div className="flex flex-col gap-2">
-                        <p>Categoria do Curso</p>
-                        <select name="categoria" id="categoria" className='border shadow-md shadow-black rounded p-2 bg-gray-100' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+                        <select name="categoria" id="categoria" className='w-[100%] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
+                            placeholder-font-poppins border-2 border-white shadow' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
                             <option value="" selected disabled>Selecione uma Categoria</option>
                             {categorias.map((categoria) => (
                             <>
