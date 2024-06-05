@@ -64,20 +64,20 @@ console.log("é mobile" + isMobile);
                 </div>
             </div>
 
-            <div className="container_home_fotos flex  overflow-hidden h-screen justify-end mr-[150px]">
-                <div className="container_home_fotos-1 flex flex-col items-center gap-y-4">
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/3.png?updatedAt=1717597935180" alt="" />
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/5.png?updatedAt=1717597936471" alt="" />
+            <div className="container_home_fotos flex h-screen justify-center pr-[10%]">
+                <div className="container_home_fotos-1 flex flex-col items-center justify-center w-1/3">
+                    <img className="h-1/2" src="https://ik.imagekit.io/codeaxis/Home%20Page/3.png?updatedAt=1717597935180" alt="" />
+                    <img className="h-1/2" src="https://ik.imagekit.io/codeaxis/Home%20Page/5.png?updatedAt=1717597936471" alt="" />
                 </div>
 
-                <div className="container_home_fotos-2 flex flex-col items-center justify-end gap-y-[26px]">
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/2.png?updatedAt=1717599449387" alt="" />
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/1.png?updatedAt=1717597852633" alt="" />
+                <div className="container_home_fotos-2 flex flex-col items-center justify-center w-1/3">
+                    <img className="h-1/2" src="https://ik.imagekit.io/codeaxis/Home%20Page/2.png?updatedAt=1717599449387" alt="" />
+                    <img className="h-1/2" src="https://ik.imagekit.io/codeaxis/Home%20Page/1.png?updatedAt=1717597852633" alt="" />
                 </div>
 
-                <div className="container_home_fotos-3 flex flex-col items-center gap-y-[24px]">
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/6.png?updatedAt=1717597936824" alt="" />
-                    <img className="h-auto w-[90%]" src="https://ik.imagekit.io/codeaxis/Home%20Page/4.png?updatedAt=1717599615912" alt="" />
+                <div className="container_home_fotos-3 flex flex-col items-center justify-center w-1/3">
+                    <img className="h-1/2" src="https://ik.imagekit.io/codeaxis/Home%20Page/6.png?updatedAt=1717597936824" alt="" />
+                    <img className="h-1/2" src="https://ik.imagekit.io/codeaxis/Home%20Page/4.png?updatedAt=1717599615912" alt="" />
                 </div>
             </div>
         </main>

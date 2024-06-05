@@ -5,7 +5,7 @@ import Categoria from "../../models/Categoria"
 import { atualizar, buscar, cadastrar } from "../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import "./formCategoria.css"
-
+import { ToastAlert } from "../../utils/ToastAlert"
 
 
 function FormCategoria() { 
@@ -25,7 +25,7 @@ function FormCategoria() {
             })
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                //alert('O token expirou!')
+                ToastAlert('O token expirou!','info')
                 handleLogout()
             }
         }
@@ -59,13 +59,13 @@ function FormCategoria() {
                 await atualizar(`/categorias`, categoria, setCategoria, {
                     headers: {'Authorization': token }
                 });
-                alert('Categoria atualizada com sucesso!');
+                ToastAlert('Categoria atualizada com sucesso!','sucesso');
             } catch (error: any) {
                 if (error.toString().includes('401')) {
-                   // alert('O token Expirou!')
+                   ToastAlert('O token Expirou!','info')
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar a Categoria!')
+                    ToastAlert('Erro ao atualizar a Categoria!','erro')
                     
                 }
             }
@@ -76,13 +76,13 @@ function FormCategoria() {
                 await cadastrar(`/categorias`, categoria, setCategoria, {
                     headers: { 'Authorization': token }
                 });
-                alert('Categoria cadastrada com sucesso!');
+                ToastAlert('Categoria cadastrada com sucesso!','sucesso');
             } catch (error: any) {
                 if (error.toString().includes('401')) {
-                    //alert('O token Expirou!')
+                    ToastAlert('O token Expirou!','info')
                     handleLogout()
                 } else {
-                    alert(`Erro ao atualizar a Categoria! ` )
+                    ToastAlert('Erro ao atualizar a Categoria!','erro' )
                 }
             }
 

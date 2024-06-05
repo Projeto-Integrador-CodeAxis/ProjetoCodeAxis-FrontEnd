@@ -28,7 +28,7 @@ function Login(){
   };
   }, []);
 
-  // até aqui e aa logica do botão
+  // até aqui e a logica do botão
 
 
 
@@ -153,4 +153,4 @@ function Login(){
         );
     }
 
-    export default Login
+    export default Login;

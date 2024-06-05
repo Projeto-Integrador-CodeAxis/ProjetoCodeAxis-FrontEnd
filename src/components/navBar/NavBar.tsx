@@ -3,6 +3,7 @@ import { ReactNode, useContext, useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Burguer } from '../burger/burguerMenu';
+import { ToastAlert } from '../../utils/ToastAlert';
 
 
 function Navbar() {
@@ -85,8 +86,8 @@ function Navbar() {
     function logout() {
 
       handleLogout()
-      alert("Usuario desconectado com sucesso")
-      navigate("/") 
+      ToastAlert('Usuario desconectado com sucesso','sucesso');
+      navigate("/")
     }
 
 
@@ -130,4 +131,4 @@ function Navbar() {
     )
   } 
   
-  export default Navbar
+  export default Navbar;

@@ -16,6 +16,8 @@ import ListarCurso from './components/cursos/listarcursos/ListarCurso'
 import FormCurso from './components/cursos/formcursos/FormCurso'
 import DeletarCurso from './components/cursos/deletarcursos/DeletarCurso'
 import Aulas from './pages/aulas/Aulas'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
       <div className='gradient h-screen w-screen'>
     
         <AuthProvider>
+        <ToastContainer/>
           <BrowserRouter>
             <Navbar />
             <Routes>
@@ -42,7 +45,6 @@ function App() {
             <Route path="/editarcurso/:id" element={<FormCurso />} />
             <Route path="/deletarcurso/:id" element={<DeletarCurso />} />
             <Route path="/aulas" element={<Aulas />} />
-            
             </Routes>
             <Footer />
           </BrowserRouter>
@@ -52,4 +54,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

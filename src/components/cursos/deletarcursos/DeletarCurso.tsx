@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router'
 import { buscar, deletar } from '../../../services/Service'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Curso from '../../../models/Curso'
+import { ToastAlert } from '../../../utils/ToastAlert'
 
 function DeletarCurso() {
     const [curso, setCurso] = useState<Curso>({} as Curso)
@@ -23,7 +24,7 @@ function DeletarCurso() {
             })
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('O token expirou, favor logar novamente')
+                ToastAlert('O token expirou, favor logar novamente','info')
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function DeletarCurso() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlert('Você precisa estar logado','erro')
             navigate('/login')
         }
     }, [token])
@@ -54,10 +55,10 @@ function DeletarCurso() {
                 }
             })
 
-            alert('Curso deletado com sucesso')
+            ToastAlert('Curso deletado com sucesso','sucesso')
 
         } catch (error) {
-            alert('Erro ao deletar Curso')
+            ToastAlert('Erro ao deletar Curso','erro')
         }
 
         retornar()

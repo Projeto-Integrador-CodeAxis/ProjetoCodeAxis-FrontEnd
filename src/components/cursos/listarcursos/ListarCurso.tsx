@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar } from "../../../services/Service"
 import Curso from "../../../models/Curso"
 import CardCurso from "../cardcursos/CardCurso"
+import { ToastAlert } from "../../../utils/ToastAlert";
 
 function ListarCurso() {
 
@@ -22,7 +23,7 @@ function ListarCurso() {
             })
         } catch (error: any){
             if(error.toString().includes('401')){
-                alert('O token expirou!')
+                ToastAlert('O token expirou!','info')
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function ListarCurso() {
 
     useEffect(() => {
         if (token === ''){
-            alert('Você precisa estar logado!')
+            ToastAlert('Você precisa estar logado!','erro')
             navigate('/')
         }
     }, [token])
