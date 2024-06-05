@@ -8,7 +8,7 @@ import "./formCategoria.css"
 
 
 
-function FormCategoria() {
+function FormCategoria() { 
 
 
     const navigate = useNavigate()
@@ -110,8 +110,7 @@ function FormCategoria() {
 
                 
                 <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 pl-[5%]">
-                    <h2 className="font-poppins font-semibold">Nossas Categorias:</h2>
-                    <p className="font-sans">JavaScript</p>
+                    <h2 className="font-poppins font-semibold">Cadastre novos cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
                 </div>
             </div>
 

@@ -23,24 +23,18 @@ function Contatos() {
   };
   }, []);
 
-
   
   return (
     <>
       <div className="flex flex-row min-h-screen px-36 min-w-screen">
 
-        <div className="flex flex-col justify-center item-center w-2/3 p-6">
-          <h1 className="text-white font-poppins font-semibold text-6xl">
+        <div className="flex flex-col justify-center item-center w-2/3 gap-2">
+          <h1 className="text-white font-poppins font-semibold text-6xl p-2">
             Nos contate!
           </h1>
           <p className="text-white font-sans font-light text-xl mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            asperiores deleniti, explicabo ullam, ratione blanditiis similique,
-            nobis laborum sunt pariatur deserunt! Saepe error dolor expedita
-            dignissimos illum natus dolorum commodi.
+          Entre em contato com a equipe do CodeAxis e descubra como podemos ajudar a transformar seu futuro com educação tecnológica.
           </p>
- 
-
                 <Botao  
                     texto={'Repositorio'}
                     link="https://github.com/Projeto-Integrador-CodeAxis"
@@ -50,9 +44,7 @@ function Contatos() {
                     borderRadiusBottomRight={25}
                     borderRadiusTopLeft={25}
                     borderRadiusBottomLeft={0}/>
-        
         </div>
-
         
         <div className="min-h-screen flex items-center justify-center p-4 w-1/2">
           <form className=" bg-celestial-blue flex flex-col justify-center 

@@ -11,7 +11,7 @@ function Navbar() {
 
   const toggleMenu = () => {
     setMenuVisivel(!menuVisivel); 
-    console.log(menuVisivel)
+    
   };
 
 
@@ -34,8 +34,6 @@ function Navbar() {
     };
   }, []);
 
-  console.log("é mobile" + isMobile);
-
 // logica para o botão sair aparecer apenas quando logado
   const navigate = useNavigate()
 
@@ -46,6 +44,18 @@ function Navbar() {
     if (usuario.token !=="" ){
         menuLogado =(   
           <>
+          <Link to='/cursos'>
+            <li> 
+              <p className="container_navbar_conteudo-link text-lg">Cursos</p>
+            </li>
+            </Link>
+
+            <Link to='/formcurso'>
+            <li> 
+              <p className="container_navbar_conteudo-link text-lg">Cadastrar Cursos</p>
+            </li>
+            </Link>
+
           <Link to = './formcategoria'>
             <li>
               <p className="container_navbar_conteudo-link text-lg">Nova categoria</p>

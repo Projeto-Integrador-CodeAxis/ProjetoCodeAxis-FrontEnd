@@ -12,6 +12,9 @@ import { AuthProvider } from './contexts/AuthContext'
 import ListaCategorias from './components/categoria/listacategorias/ListaCategorias'
 import DeletarCategoria from './components/categoria/deletarcategoria/DeletarCategoria'
 import FormCategoria from './pages/categoria/formCategoria'
+import ListarCurso from './components/cursos/listarcursos/ListarCurso'
+import FormCurso from './components/cursos/formcursos/FormCurso'
+import DeletarCurso from './components/cursos/deletarcursos/DeletarCurso'
 import Aulas from './pages/aulas/Aulas'
 
 
@@ -34,6 +37,10 @@ function App() {
             <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
             <Route path="/formcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+            <Route path="/cursos" element={<ListarCurso />} />
+            <Route path="/formcurso" element={<FormCurso />} />
+            <Route path="/editarcurso/:id" element={<FormCurso />} />
+            <Route path="/deletarcurso/:id" element={<DeletarCurso />} />
             <Route path="/aulas" element={<Aulas />} />
             
             </Routes>
