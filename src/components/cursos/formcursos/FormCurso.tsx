@@ -6,7 +6,6 @@ import Curso from "../../../models/Curso";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ToastAlert } from "../../../utils/ToastAlert";
 
-
 function FormCurso() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
@@ -96,6 +95,7 @@ function FormCurso() {
           await atualizar(`/cursos`, curso, setCurso, {
             headers: { Authorization: token },
           });
+
           ToastAlert('Curso atualizado com sucesso','sucesso');
           retornar();
         } catch (error: any) {
@@ -112,6 +112,7 @@ function FormCurso() {
             headers: { Authorization: token },
           });
   
+
           ToastAlert('Curso cadastrado com sucesso','sucesso');
           retornar();
         } catch (error: any) {

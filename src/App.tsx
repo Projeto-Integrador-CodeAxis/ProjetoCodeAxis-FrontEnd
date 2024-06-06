@@ -18,6 +18,9 @@ import DeletarCurso from './components/cursos/deletarcursos/DeletarCurso'
 import Aulas from './pages/aulas/Aulas'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
+import { CartProvider } from './contexts/CartContext'
+import Cart from './components/carrinho/cardcart/Cart'
+
 
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
     
         <AuthProvider>
         <ToastContainer/>
+        <CartProvider>
           <BrowserRouter>
             <Navbar />
             <Routes>
@@ -45,9 +49,11 @@ function App() {
             <Route path="/editarcurso/:id" element={<FormCurso />} />
             <Route path="/deletarcurso/:id" element={<DeletarCurso />} />
             <Route path="/aulas" element={<Aulas />} />
+            <Route path="/cart" element={<Cart />} />
             </Routes>
             <Footer />
           </BrowserRouter>
+          </CartProvider>
         </AuthProvider>
       </div>
     </>

@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Burguer } from '../burger/burguerMenu';
 import { ToastAlert } from '../../utils/ToastAlert';
-
+import { ShoppingCart } from '@phosphor-icons/react';
 
 function Navbar() {
 
@@ -76,6 +76,12 @@ function Navbar() {
             </Link>
 
             
+
+            <Link to='/cart'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg"><ShoppingCart size={25} weight='bold' /></p>
+            </li>
+            </Link>
 
             </>
         )
