@@ -103,15 +103,9 @@ function FormCategoria() {
         <>
         
         <section className="container_cadastro flex flex-row text-white text h-screen w-screen">
-            <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">
-                <div >
+            <div className="container_cadastro_textos flex flex-col gap-y-6 px-32 justify-center w-1/2"> 
                     <h1 className="text-5xl font-semibold font-poppins text-center">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
-                </div>
-
-                
-                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 pl-[5%]">
-                    <h2 className="font-poppins font-semibold">Cadastre novos cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
-                </div>
+                    <h2 className="font-poppins font-semibold text-xl">Cadastre novos cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2> 
             </div>
 
             <div className="container_cadastro_form flex h-screen w-1/2 justify-center items-center">
@@ -142,7 +136,7 @@ function FormCategoria() {
                     <div className="container_formcategoria_buttons flex flex-row justify-center items-center gap-4 w-[70%]">
                             
                             
-                    <Link to="/categorias" className="w-1/2 rounded-lg
+                    <Link to="/categorias" className="buttons_a w-1/2 rounded-lg
                                     border-2 border-white text-white font-poppins font-semibold
                                     hover:border-prussian-blue h-12 flex items-center justify-center"
                                     style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}>
