@@ -94,9 +94,9 @@ function Navbar() {
     return (
       <>
       <div className='container_navbar w-auto text-white flex justify-around items-center p-6  box-border '>
-            <div className='container_navbar-logo flex justify-center align-center w-18'>
-              <img id='logo' src="https://ik.imagekit.io/4kqnwi1lux/Generation/ariah%20garcia%20(100%20x%2090%20px)%20(1).png?updatedAt=1716306994973" 
-                        alt="Logo" className="w-full h-full object-cover"/>
+            <div className='container_navbar-logo flex justify-center align-center w-18 pr-4'>
+              <img id='logo' src="https://ik.imagekit.io/codeaxis/Home%20Page/Logo_20Mariah_20(1).png_updatedAt=1717679560993?updatedAt=1717679606461" 
+                        alt="Logo" className="w-full h-16 object-cover"/>
             </div>
 
           <Burguer onClick={toggleMenu} />
