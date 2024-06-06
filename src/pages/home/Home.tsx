@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import Botao from '../../components/botao/Botao';
 import './Home.css'
 
-
-
 function Home() {
 
 const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);

@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { buscar } from '../../services/Service';
 import { useNavigate } from 'react-router-dom';
 import Categoria from '../../models/Categoria';
-
+import YouTube from 'react-youtube';
 interface AccordionState {
     [key: string]: boolean;
 }
@@ -19,7 +19,7 @@ function Aulas() {
             [item]: !prevState[item],
         }));
     };
-
+  const [currentVideoId, setCurrentVideoId] = useState('');
     const navigate = useNavigate();
 
     const [cursos, setCursos] = useState<Curso[]>([]);
@@ -88,56 +88,54 @@ const setSrc = (link: string) => {
     };
 
     return (
-
-        
-    <div className='flex flex-row h-full container_aulas'>
-
-    <div className='container_aulas__navmenu w-1/3 p-14' id="accordion-collapse" data-accordion="collapse">
-
-    {categorias.map((categorias) => (
-
-            
-            <div key={categorias.id}>
-                  <h2 id={`accordion-collapse-heading-${categorias.id}`} className="box-border bg-celestial-blue">
-                    <button
-                        type="button"
-                        className="flex items-center justify-between 
-                        w-full p-5 font-medium rtl:text-right text-gray-500 border 
-                        border-b-0 border-white"
-                        data-accordion-target={`#accordion-collapse-body-${categorias.id}`}
-                                aria-expanded={isOpen[`item${categorias.id}`]}
-                                aria-controls={`accordion-collapse-body-${categorias.id}`}
-                                onClick={() => toggleAccordion(`item${categorias.id}`)}
-                    >
-                        <span className="text-white">{categorias.categoria}</span>
-                        <ArrowDown className={`text-white w-10 h-6 shrink-0 transition-transform ${isOpen[`item${categorias.id}`] ? 'rotate-180' : ''}`} size={32} />
-                    </button>
+        <div className='flex flex-row h-full container_aulas'>
+          <div className='container_aulas__navmenu w-1/3 p-14' id="accordion-collapse" data-accordion="collapse">
+            {categorias.map((categoria) => (
+              <div key={categoria.id}>
+                <h2 id={`accordion-collapse-heading-${categoria.id}`} className="box-border bg-celestial-blue">
+                  <button
+                    type="button"
+                    className="flex items-center justify-between 
+                            w-full p-5 font-medium rtl:text-right text-gray-500 border 
+                            border-b-0 border-white"
+                    data-accordion-target={`#accordion-collapse-body-${categoria.id}`}
+                    aria-expanded={isOpen[`item${categoria.id}`]}
+                    aria-controls={`accordion-collapse-body-${categoria.id}`}
+                    onClick={() => toggleAccordion(`item${categoria.id}`)}
+                  >
+                    <span className="text-white">{categoria.categoria}</span>
+                    <ArrowDown className={`text-white w-10 h-6 shrink-0 transition-transform ${isOpen[`item${categoria.id}`] ? 'rotate-180' : ''}`} size={32} />
+                  </button>
                 </h2>
-
                 <div
-                            id={`accordion-collapse-body-${categorias.id}`}
-                            className={`${isOpen[`item${categorias.id}`] ? '' : 'hidden'}`}
-                            aria-labelledby={`accordion-collapse-heading-${categorias.id}`}>
-                            {cursos.filter((curso) => curso.categoria?.id === categorias.id).map((curso) => (
-                                <button onClick={() => setSrc(curso.link)} key={curso.id} className="bg-prussian-blue w-full hover:bg-black p-5 border border-white rounded-none">
-                                    <span className="text-white mb-2">{curso.titulo}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                
-            </div>
-))}
-        
-    </div>
-
-        <div className='container_aulas__iframe flex justify-center w-[900px] h-[500px] 
-        p-14 bg-celestial-blue rounded-xl'>
-        <iframe id='frame' className='w-full' src="" frameBorder="0" allowFullScreen></iframe>
+                  id={`accordion-collapse-body-${categoria.id}`}
+                  className={`${isOpen[`item${categoria.id}`] ? '' : 'hidden'}`}
+                  aria-labelledby={`accordion-collapse-heading-${categoria.id}`}>
+                  {cursos.filter((curso) => curso.categoria?.id === categoria.id).map((curso) => (
+                    <button onClick={() => setCurrentVideoId(curso.link)} key={curso.id} className="bg-prussian-blue w-full hover:bg-black p-5 border border-white rounded-none">
+                      <span className="text-white mb-2">{curso.titulo}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className='container_aulas__iframe flex justify-center w-[900px] h-[500px] 
+            p-14 bg-celestial-blue rounded-xl'>
+            {currentVideoId && (
+              <YouTube
+                videoId={currentVideoId}
+                className='w-full'
+                opts={{ height: '500', width: '900', playerVars: { autoplay: 1 } }}
+                onReady={(event) => event.target.pauseVideo()}
+              />
+            )}
+          </div>
         </div>
-    </div>
-    );
-}
+      );
+    };
 
 export default Aulas;
+
+
 

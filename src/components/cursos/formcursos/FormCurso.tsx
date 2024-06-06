@@ -20,17 +20,7 @@ function FormCurso() {
 
     });
   
-    const [curso, setCurso] = useState<Curso>({
-      id: 0,
-      titulo: '',
-      descricao: '',
-      autor: '',
-      link: '',
-      valor: 0,
-      imagem: '',
-      categoria: null,
-      usuario: null,
-    });
+    const [curso, setCurso] = useState<Curso>({} as Curso);
   
     async function buscarCursoPorId(id: string) {
       await buscar(`/cursos/${id}`, setCurso, {
@@ -220,14 +210,14 @@ function FormCurso() {
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                   </div> 
-                  <div className="flex flex-col gap-2 w-[80%]">
-                        <select
+                  <div className="flex flex-col gap-2 w-[80%] ">
+                  <select
                           name="categoria" 
                           id="categoria" 
-                          className='w-[100%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                            placeholder-font-poppins border-2 border-white shadow' 
+                          className='border p-2 border-slate-800 rounded-lg w-[100%] h-full bg-white/75
+                            border-white shadow mb-8' 
                             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-                            <option value="" selected disabled>Selecione uma Categoria</option>
+                            <option value="" className="placeholder:text-grey-600" selected disabled>Selecione uma Categoria</option>
                             {categorias.map((categoria) => (
                             <>
                             <option value={categoria.id} >{categoria.categoria}</option>
