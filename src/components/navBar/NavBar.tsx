@@ -75,12 +75,22 @@ function Navbar() {
             </li>
             </Link>
 
-            <li>
-              <a onClick={logout} href="/" className="container_navbar_conteudo-link text-lg">Sair</a>
-            </li>
+            
 
             </>
         )
+    }
+
+    let menuSair: ReactNode;
+
+    if (usuario.token !=="" ){
+      menuSair = (
+        <>
+            <li>
+                <a onClick={logout} href="/" className="container_navbar_conteudo-link text-lg">Sair</a>
+          </li>
+        </>
+      )
     }
 
     function logout() {
@@ -94,10 +104,12 @@ function Navbar() {
     return (
       <>
       <div className='container_navbar w-auto text-white flex justify-around items-center p-6  box-border '>
-            <div className='container_navbar-logo flex justify-center align-center w-18 pr-4'>
-              <img id='logo' src="https://ik.imagekit.io/codeaxis/Home%20Page/Logo_20Mariah_20(1).png_updatedAt=1717679560993?updatedAt=1717679606461" 
-                        alt="Logo" className="w-full h-16 object-cover"/>
-            </div>
+            <Link to = './'>
+              <div className='container_navbar-logo flex justify-center align-center w-18 pr-4'>
+                <img id='logo' src="https://ik.imagekit.io/codeaxis/Home%20Page/Logo_20Mariah_20(1).png_updatedAt=1717679560993?updatedAt=1717679606461"
+                          alt="Logo" className="w-full h-16 object-cover"/>
+              </div>
+            </Link>
 
           <Burguer onClick={toggleMenu} />
           <ul id='itens_menu' className={`container_navbar_conteudo w-full justify-start gap-6 items-center text-lg
@@ -108,6 +120,8 @@ function Navbar() {
               <p  className='container_navbar_conteudo-link text-2xl'>CodeAxis</p>
             </li>
             </Link>
+
+            {menuLogado}
 
             <Link to = './sobre'>
             <li>
@@ -121,7 +135,7 @@ function Navbar() {
             </li>
             </Link>
 
-            {menuLogado}
+            {menuSair}
             
           </ul>
               
