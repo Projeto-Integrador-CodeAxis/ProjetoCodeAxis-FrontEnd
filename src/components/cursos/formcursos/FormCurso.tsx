@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Categoria from "../../../models/Categoria";
 import Curso from "../../../models/Curso";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
+//import { ToastAlert } from "../../../utils/ToastAlert";
 
 
 function FormCurso() {
@@ -51,7 +52,7 @@ function FormCurso() {
   
     useEffect(() => {
       if (token === '') {
-        alert('Você precisa estar logado');
+        //ToastAlert('Você precisa estar logado','erro');
         navigate('/');
       }
     }, [token]);
@@ -95,14 +96,14 @@ function FormCurso() {
           await atualizar(`/cursos`, curso, setCurso, {
             headers: { Authorization: token },
           });
-          alert('Curso atualizado com sucesso');
+          //ToastAlert('Curso atualizado com sucesso','sucesso');
           retornar();
         } catch (error: any) {
           if (error.toString().includes('401')) {
-           alert('O token expirou, favor logar novamente')
+            //ToastAlert('O token expirou, favor logar novamente','erro')
             handleLogout()
           } else {
-          alert('Erro ao atualizar o curso');
+            //ToastAlert('Erro ao atualizar o curso','erro');
           }
         }
       } else {
@@ -111,14 +112,14 @@ function FormCurso() {
             headers: { Authorization: token },
           });
   
-          alert('Curso cadastrado com sucesso');
+          //ToastAlert('Curso cadastrado com sucesso','sucesso');
           retornar();
         } catch (error: any) {
           if (error.toString().includes('401')) {
-            alert('O token expirou, favor logar novamente')
+            //ToastAlert('O token expirou, favor logar novamente','erro')
             handleLogout()
           } else {
-            alert('Erro ao cadastrar o curso');
+            //ToastAlert('Erro ao cadastrar o curso','erro');
           }
         }
       }
@@ -142,7 +143,7 @@ function FormCurso() {
             <div className="container_cadastro_form flex w-1/2 h-full justify-center items-center">
             
             <form className="container_cadastro_form-formulario text-black flex flex-col h-full justify-center items-center 
-            bg-celestial-blue w-3/5 rounded-2xl gap-y-2 box-border p-4 shadow-white py-10"
+            bg-celestial-blue w-3/5 rounded-2xl gap-y-0.5 box-border p-4 shadow-white py-10"
             onSubmit={gerarNovoCurso} >
                 <h1 className="text-white font-poppins font-semibold text-2xl">
                     Insira seu curso:

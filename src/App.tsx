@@ -16,6 +16,8 @@ import ListarCurso from './components/cursos/listarcursos/ListarCurso'
 import FormCurso from './components/cursos/formcursos/FormCurso'
 import DeletarCurso from './components/cursos/deletarcursos/DeletarCurso'
 import Aulas from './pages/aulas/Aulas'
+import { CartProvider } from './contexts/CartContext'
+import Cart from './components/carrinho/cardcart/Cart'
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
       <div className='gradient h-screen w-screen'>
     
         <AuthProvider>
+        <CartProvider>
           <BrowserRouter>
             <Navbar />
             <Routes>
@@ -42,10 +45,11 @@ function App() {
             <Route path="/editarcurso/:id" element={<FormCurso />} />
             <Route path="/deletarcurso/:id" element={<DeletarCurso />} />
             <Route path="/aulas" element={<Aulas />} />
-            
+            <Route path="/cart" element={<Cart />} />
             </Routes>
             <Footer />
           </BrowserRouter>
+          </CartProvider>
         </AuthProvider>
       </div>
     </>
