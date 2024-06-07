@@ -18,6 +18,7 @@ export default {
       'light-gray': '#d3d3d3',
       'wine-red': ' #980409',
       'fire-brick': '#B22222',
+      'red': '#ff0000'
     },
     fontFamily: {
       'sans': ['Work Sans', 'sans-serif'],

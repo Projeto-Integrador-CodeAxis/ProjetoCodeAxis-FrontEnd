@@ -6,7 +6,6 @@ import Curso from "../../../models/Curso";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ToastAlert } from "../../../utils/ToastAlert";
 
-
 function FormCurso() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
@@ -20,17 +19,7 @@ function FormCurso() {
 
     });
   
-    const [curso, setCurso] = useState<Curso>({
-      id: 0,
-      titulo: '',
-      descricao: '',
-      autor: '',
-      link: '',
-      valor: 0,
-      imagem: '',
-      categoria: null,
-      usuario: null,
-    });
+    const [curso, setCurso] = useState<Curso>({} as Curso);
   
     async function buscarCursoPorId(id: string) {
       await buscar(`/cursos/${id}`, setCurso, {
@@ -96,6 +85,7 @@ function FormCurso() {
           await atualizar(`/cursos`, curso, setCurso, {
             headers: { Authorization: token },
           });
+
           ToastAlert('Curso atualizado com sucesso','sucesso');
           retornar();
         } catch (error: any) {
@@ -112,6 +102,7 @@ function FormCurso() {
             headers: { Authorization: token },
           });
   
+
           ToastAlert('Curso cadastrado com sucesso','sucesso');
           retornar();
         } catch (error: any) {
@@ -142,7 +133,7 @@ function FormCurso() {
 
             <div className="container_cadastro_form flex w-1/2 h-full justify-center items-center">
             
-            <form className="container_cadastro_form-formulario text-black flex flex-col h-full justify-center items-center 
+            <form className="container_cadastro_form-formulario text-black flex flex-col h-[600px] justify-center items-center 
             bg-celestial-blue w-3/5 rounded-2xl gap-y-0.5 box-border p-4 shadow-white py-10"
             onSubmit={gerarNovoCurso} >
                 <h1 className="text-white font-poppins font-semibold text-2xl">
@@ -220,14 +211,14 @@ function FormCurso() {
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                   </div> 
-                  <div className="flex flex-col gap-2 w-[80%]">
-                        <select
+                  <div className="flex flex-col gap-2 w-[80%] ">
+                  <select
                           name="categoria" 
                           id="categoria" 
-                          className='w-[100%] h-[12%] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                            placeholder-font-poppins border-2 border-white shadow' 
+                          className='border p-2 border-slate-800 rounded-lg w-[100%] h-full bg-white/75
+                            border-white shadow mb-8' 
                             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-                            <option value="" selected disabled>Selecione uma Categoria</option>
+                            <option value="" className="placeholder:text-grey-600" selected disabled>Selecione uma Categoria</option>
                             {categorias.map((categoria) => (
                             <>
                             <option value={categoria.id} >{categoria.categoria}</option>
