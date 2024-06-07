@@ -3,8 +3,8 @@ import { ReactNode, useContext, useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Burguer } from '../burger/burguerMenu';
-import { ToastAlert } from '../../utils/ToastAlert';
 import { ShoppingCart, SignOut } from '@phosphor-icons/react';
+
 
 function Navbar() {
 
@@ -65,11 +65,16 @@ function Navbar() {
           </li>
         </Link>
 
+
         <Link to='/formcurso'>
           <li> 
             <p className="container_navbar_conteudo-link text-lg">Cadastrar Cursos</p>
           </li>
         </Link>
+
+            
+        )
+    }
 
         <Link to='/categorias'>
           <li>

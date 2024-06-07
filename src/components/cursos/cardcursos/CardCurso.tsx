@@ -28,8 +28,9 @@ function CardCursos({curso}:CardCursosProps) {
             <p className='px-6 text-2x bg-slate-200 h-full flex items-center justify-center text-justify font-poppins'>{curso.descricao}</p>
             <p className='pt-4 text-2x bg-slate-200 h-full flex items-center justify-center font-poppins font-semibold'>Autor: {curso.autor}</p>
             <div className="flex flex-wrap">
-        <button className='w-full m-6 border-2 border-white rounded-2xl text-white bg-prussian-blue hover:bg-cerulean flex items-center justify-center py-2 shadow-xl '
-          onClick={() => adicionarCurso(curso)}>Comprar Certificado</button>
+            <button className='w-full m-6 border-2 border-white rounded-2xl text-white bg-prussian-blue hover:bg-cerulean flex items-center justify-center py-2 shadow-xl '
+            onClick={() => adicionarCurso(curso)}>Comprar Certificado</button>
+
       </div>
         </div>
 

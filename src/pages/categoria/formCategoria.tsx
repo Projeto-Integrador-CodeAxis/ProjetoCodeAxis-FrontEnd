@@ -109,6 +109,7 @@ function FormCategoria() {
                 </div>
 
                 
+
                 <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9">
                     <h2 className="font-poppins font-semibold">Cadastre novos cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
                 </div>

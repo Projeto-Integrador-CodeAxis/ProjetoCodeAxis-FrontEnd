@@ -21,7 +21,6 @@ import { ToastContainer } from 'react-toastify'
 import { CartProvider } from './contexts/CartContext'
 import Cart from './components/carrinho/card/Cart'
 
-
 function App() {
 
   return (
@@ -31,6 +30,7 @@ function App() {
         <AuthProvider>
         <CartProvider>
         <ToastContainer/>
+        <CartProvider>
           <BrowserRouter>
             <Navbar />
             <Routes>

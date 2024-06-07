@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState } from "react";
 import Curso from "../models/Curso";
 import { ToastAlert } from "../utils/ToastAlert";
 
+
 interface CartContextProps {
     adicionarCurso: (curso: Curso) => void
     removerCurso: (cursoId: number) => void
@@ -45,6 +46,7 @@ export function CartProvider({ children }: CartProviderProps) {
 
     function limparCart() {
         ToastAlert('Compra Efetuada com Sucesso', 'sucesso')
+
         setItems([])
     }
 
