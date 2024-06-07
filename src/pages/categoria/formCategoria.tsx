@@ -105,11 +105,11 @@ function FormCategoria() {
         <section className="container_cadastro flex flex-row text-white text h-screen w-screen">
             <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">
                 <div >
-                    <h1 className="text-5xl font-semibold font-poppins text-center">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
+                    <h1 className="text-5xl font-semibold font-poppins text-left">{id !== undefined ? 'Editar Categoria' : 'Cadastrar Categoria'}</h1>
                 </div>
 
                 
-                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 pl-[5%]">
+                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9">
                     <h2 className="font-poppins font-semibold">Cadastre novos cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
                 </div>
             </div>

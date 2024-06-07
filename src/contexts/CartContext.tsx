@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import Curso from "../models/Curso";
-import { ToastAlerta } from "../utils/ToastAlerta";
+import { ToastAlert } from "../utils/ToastAlert";
 
 interface CartContextProps {
     adicionarCurso: (curso: Curso) => void

@@ -81,6 +81,12 @@ function Navbar() {
           </li>
         </Link>
 
+        <Link to='/cart'>
+            <li>
+              <p className="container_navbar_conteudo-link text-lg"><ShoppingCart size={25} weight='bold' /></p>
+            </li>
+          </Link>
+
       </>
     )
   }
@@ -126,12 +132,6 @@ function Navbar() {
           <div className="ml-auto flex items-center gap-6">
             {menuLogado}
           </div>
-
-          <Link to='/cart'>
-            <li>
-              <p className="container_navbar_conteudo-link text-lg"><ShoppingCart size={25} weight='bold' /></p>
-            </li>
-          </Link>
 
           {menuSair}
           

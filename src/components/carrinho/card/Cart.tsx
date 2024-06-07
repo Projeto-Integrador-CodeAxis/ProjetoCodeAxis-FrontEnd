@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../../contexts/CartContext";
-import CardCart from "../cardcart/CardCart";
+import CardCart from "./CardCart";
 
 
 function Cart() {
@@ -24,11 +24,11 @@ function Cart() {
             <h2 className="text-2xl text-center my-4 text-white font-poppins">
                 { items.length === 0 ? 'O Carrinho está vazio!' : ''}
             </h2>
-            <div className='container mx-auto my-4 grid grid-cols-1 
-                            md:grid-cols-2 lg:grid-cols-5 gap-4 font-poppins'>
+            <div className='container mx-20 grid grid-cols-1 
+                            md:grid-cols-2 lg:grid-cols-5 gap-6 font-poppins items-center'>
                 {
                     items.map(curso => (
-                        <CardCart key={curso.id} item={curso} />
+                        <CardCart key={curso.id} curso={curso} />
                     ))
                 }
             </div>
