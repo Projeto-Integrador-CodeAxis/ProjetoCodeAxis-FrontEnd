@@ -1,8 +1,39 @@
+import React, { useContext } from 'react';
+import emailjs, { send } from 'emailjs-com';
 import "./Contatos.css";
 import Botao from "../../components/botao/Botao";
 import { useEffect, useState } from "react";
+import { ToastAlert } from '../../utils/ToastAlert';
+import { RotatingLines } from 'react-loader-spinner';
+
 
 function Contatos() {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleFormSubmit = (e) => {
+    e.preventDefault();
+      setIsLoading(true);
+
+    emailjs.sendForm(
+      'service_urrpo24', 
+      'template_0gq8n95', 
+      e.target, 
+      'oj_1AEm18S4A87JjT',
+    )
+    .then(() => {
+      ToastAlert('Email enviado com sucesso', 'sucesso');
+      setIsLoading(false);
+    
+    }, () => {
+      ToastAlert('Não conseguimos enviar o email', 'erro');
+      setIsLoading(false);
+    });
+  };
+
+  
+
+
+
 
   const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
 
@@ -23,18 +54,28 @@ function Contatos() {
   };
   }, []);
 
+
+  
+
+
+
+
+
+
   
   return (
     <>
-      <div className="flex flex-row min-h-screen px-36 min-w-screen">
+      <div className="container_contatos flex flex-row min-h-screen px-36 w-full">
 
-        <div className="flex flex-col justify-center item-center w-2/3 gap-2">
+        <div className="container_contatos-bloco-textos flex flex-col justify-center item-center w-2/3 gap-2">
           <h1 className="text-white font-poppins font-semibold text-6xl p-2">
             Nos contate!
           </h1>
           <p className="text-white font-sans font-light text-xl mb-8">
           Entre em contato com a equipe do CodeAxis e descubra como podemos ajudar a transformar seu futuro com educação tecnológica.
           </p>
+
+            <div>
                 <Botao  
                     texto={'Repositorio'}
                     link="https://github.com/Projeto-Integrador-CodeAxis"
@@ -44,89 +85,85 @@ function Contatos() {
                     borderRadiusBottomRight={25}
                     borderRadiusTopLeft={25}
                     borderRadiusBottomLeft={0}/>
+            </div>
         </div>
         
-        <div className="min-h-screen flex items-center justify-center p-4 w-1/2">
-          <form className=" bg-celestial-blue flex flex-col justify-center 
-          items-center p-8 widht-450 height-550 rounded-3xl shadow-white">
-            <div className="mb-8">
-              <label
-                htmlFor="nome"
-                className="block text-sm font-sans font-medium text-white"
-              ></label>
+        <div onSubmit={handleFormSubmit} className="container_contatos-bloco-form min-h-screen flex items-center justify-center p-4 w-screen">
+        <form className="container_contatos-form bg-celestial-blue flex flex-col justify-center 
+          items-center p-8 w-[450px] h-[450px] rounded-3xl shadow-white">
+          <div className="mb-8">
               <input
                 type="text"
                 id="nome"
-                name="nome"
+                name="user_name"
                 placeholder="Digite seu nome"
                 required
                 className="w-[330px] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                      placeholder-font-poppins border-2 border-white shadow "
-              />
+                      placeholder-font-poppins border-2 border-white shadow "/>
             </div>
 
             <div className="mb-8">
-              <label
-                htmlFor="usuario"
-                className="block text-sm font-sans font-medium text-white"
-              ></label>
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="user_email"
                 placeholder="Digite seu email"
                 required
                 className="w-[330px] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                      placeholder-font-poppins border-2 border-white shadow "
-              />
+                      placeholder-font-poppins border-2 border-white shadow "/>
             </div>
 
             <div className="mb-8">
-              <label
-                htmlFor="senha"
-                className="block text-sm font-sans font-medium text-white"
-              ></label>
               <input
                 type="texto"
                 id="assunto"
-                name="teto"
+                name="assunto"
                 placeholder="Digite o assunto"
                 required
                 className="w-[330px] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                      placeholder-font-poppins border-2 border-white shadow "
-              />
+                      placeholder-font-poppins border-2 border-white shadow "/>
             </div>
 
             <div className="mb-8">
-              <label
-                htmlFor="confirmar-senha"
-                className="block text-sm font-sans font-medium text-white"
-              ></label>
               <input
                 type="texto"
-                id="Mensagem"
-                name="Mensagem"
+                id="mensagem"
+                name="mensagem"
                 placeholder="Digite sua mensagem"
                 required
                 className="w-[330px] h-[55px] bg-white/75 rounded-lg p-4 placeholder-grey-600 
-                      placeholder-font-poppins border-2 border-white shadow "
-              />
+                      placeholder-font-poppins border-2 border-white shadow "/>
             </div>
 
             <div className="">
               <button
-                type="submit"
-                className="w-[330px] h-[35px] rounded-lg
+                type="submit" 
+                className="  w-[330px] h-[35px] rounded-lg
                     border-2 border-white text-white font-poppins font-semibold
                     hover:border-prussian-blue"
-                    style={{ backgroundColor: 'rgba(0, 46, 78, 0.5)' }}
-              >
-                Enviar
+                    style={{ backgroundColor: 'rgba(0, 46, 78, 0.5)',
+                    display: 'flex', 
+                    justifyContent: 'center',
+                    alignItems: 'center' }}>
+
+                        {isLoading ? <RotatingLines
+                                    strokeColor="white"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="20"
+                                    visible={true}
+                                /> :
+                                    <span>Enviar</span>
+                                }
+              
               </button>
             </div>
 
-          </form>
+
+
+            </form>
         </div>
+
       </div>
     </>
   );

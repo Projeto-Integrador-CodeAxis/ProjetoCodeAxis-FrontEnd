@@ -8,19 +8,38 @@
         }
     
         .container_home_fotos {
-        order: 1;
-        margin-right: 0;
-        justify-content: center;
-        height: 250px;
-        margin-top: 35px;
-        margin-bottom: -35px;
-        margin-right: 15px;
+            order: 1;
+            margin-right: 0;
+            justify-content: center; 
+            align-items: center; 
+            margin-bottom: -35px;
+            height: 300px;
+            padding: 0;
+            display: flex; 
+        }
+        
+        .container_home_fotos-1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 350px;
+            width: 100%;
+            margin-top: -250px;
+            margin-bottom: -250px;
+        }
+
+        .container_home_fotos-2 {
+            display: none;
         }
     
+        .container_home_fotos-3 {
+            display: none;
+        }
+
+
         .container_home_textos {
         order: 2;
         padding: 16px;
-        margin-top: -300px;
         }
     
         .container_home_textos-h1 .heading {
@@ -33,14 +52,12 @@
         }
     
         .container_home_textos-button {
-        margin-top: -120px;
         flex-direction: row;
         font-size: 18px;
         gap: 16px;
         }
     
         .container_home_textos-categorias {
-        margin-top: -80px;
         text-align: center;
         font-size: 25px;
         }

@@ -74,7 +74,7 @@ usuarioLogado()
                     borderRadiusTopLeft={25}
                     borderRadiusBottomLeft={25}/>
                     
-              </div>
+            </div>
 
                 <div className="container_home_textos-categorias flex flex-col text-xl mt-1 ">
                     <h2 className="font-poppins font-semibold ">Promovendo inclusão digital através da educação.</h2>
