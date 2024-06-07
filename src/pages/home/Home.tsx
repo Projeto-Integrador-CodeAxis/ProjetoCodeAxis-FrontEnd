@@ -31,14 +31,18 @@ const { usuario, handleLogout } = useContext(AuthContext)
 
 const [logado, isLogado] = useState(false)
 
+const [logado, isLogado] = useState(false)
+
+const {usuario} = useContext(AuthContext)
+
 useEffect(() => {
     const usuarioLogado = () => {
-        if (usuario.token == usuario.token) {
-            isLogado(true)
-        } isLogado(false)
-}
-usuarioLogado()
+        if (usuario.token) 
+            isLogado(true);
+        
+    };
 
+    usuarioLogado();
 }, [usuario.token]);
 
 
@@ -51,7 +55,8 @@ usuarioLogado()
                     <h1 className="text-6xl font-semibold font-poppins pb-20">Sua nova escola de tecnologia!</h1>
                 </div>
 
-                <div className='container_navbar_botao flex justify-start text-lg gap-x-9 mt-[-120px] pt-10'>
+                <div className={`container_navbar_botao flex justify-start text-lg gap-x-9 mt-[-120px] pt-10
+                ${logado ? 'hidden' : 'flex'}`}>
 
                 
                 <Botao
