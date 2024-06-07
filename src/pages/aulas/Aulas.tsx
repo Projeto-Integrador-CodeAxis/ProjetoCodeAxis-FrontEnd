@@ -120,13 +120,13 @@ const setSrc = (link: string) => {
               </div>
             ))}
           </div>
-          <div className='container_aulas__iframe flex justify-center w-[900px] h-[500px] 
+          <div className='container_aulas__iframe flex items-center justify-center w-[900px] h-[500px] 
             p-14 bg-celestial-blue rounded-xl'>
             {currentVideoId && (
               <YouTube
                 videoId={currentVideoId}
-                className='w-full'
-                opts={{ height: '500', width: '900', playerVars: { autoplay: 1 } }}
+                className='w-full items-center justify-center flex'
+                opts={{ height: '450', width: '900', playerVars: { autoplay: 1 } }}
                 onReady={(event) => event.target.pauseVideo()}
               />
             )}

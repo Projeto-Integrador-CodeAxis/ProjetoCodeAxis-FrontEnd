@@ -30,6 +30,8 @@ function Navbar() {
     };
   }, []);
 
+  //responsividade
+
   const navigate = useNavigate()
 
   const { usuario, handleLogout } = useContext(AuthContext)
@@ -111,7 +113,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='container_navbar w-auto text-white flex justify-around items-center p-6  box-border '>
+      <div className='container_navbar w-full text-white flex justify-around items-center p-2 px-8  box-border '>
         <Link to='./'>
           <div className='container_navbar-logo flex justify-center align-center w-18 pr-4'>
             <img id='logo' src="https://ik.imagekit.io/codeaxis/Home%20Page/Logo_20Mariah_20(1).png_updatedAt=1717679560993?updatedAt=1717679606461"

@@ -4,7 +4,7 @@ import './Footer.css'
 function Footer(){
     return(
         <>
-            <div className="h-screen container_footer bg-transparent flex flex-col w-screen items-center justify-center py-2 space-y-2 text-white font-poppins">
+            <div className="container_footer bg-transparent flex flex-col w-screen items-center justify-center py-2 space-y-2 text-white font-poppins">
                 <div className="container_footer_textos text-center">
                     <h6 className="text-lg">2024 - CodeAxis | Copyright &copy;</h6>
                     <p>Entre em contato e conheça os nossos projetos</p>
