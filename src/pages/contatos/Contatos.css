@@ -25,3 +25,74 @@
   .borda {
     border: 4px white
   }
+
+  @media screen and (min-width: 350px) and (max-width: 450px) {
+
+    @media screen and (max-width: 600px) { 
+
+
+      .container_contatos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      .container_contatos-bloco-textos{
+        width: 350px
+      }
+
+      .container_contatos-bloco-textos h1 {
+
+        font-size: 25px;
+        text-align: center;
+      }
+
+      .container_contatos-bloco-textos p {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .container_contatos-bloco-textos div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container_contatos-form {
+        height: 350px;
+      }
+
+      .container_contatos-bloco-form {
+        box-sizing: border-box;
+        width: 350px;
+        padding: 8px;
+        min-height: 450px;
+        
+      }
+
+      .container_contatos-form {
+        width: 320px;
+      }
+
+      .container_contatos-form div {
+        margin-bottom: 20px;
+      }
+
+      .container_contatos-form input {
+        width: 280px;
+        height: 40px;
+      }
+
+      .container_contatos-form button {
+        width: 280px;
+        height: 40px;
+      }
+
+  
+
+    } 
+  
+  }
