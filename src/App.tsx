@@ -19,7 +19,7 @@ import Aulas from './pages/aulas/Aulas'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
 import { CartProvider } from './contexts/CartContext'
-import Cart from './components/carrinho/card/Cart'
+import Cart from './components/carrinho/cardcart/Cart'
 
 function App() {
 
@@ -28,7 +28,6 @@ function App() {
       <div className='gradient h-screen w-screen'>
     
         <AuthProvider>
-        <CartProvider>
         <ToastContainer/>
         <CartProvider>
           <BrowserRouter>

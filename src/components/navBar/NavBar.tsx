@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Burguer } from '../burger/burguerMenu';
 import { ShoppingCart, SignOut } from '@phosphor-icons/react';
+import { ToastAlert } from '../../utils/ToastAlert';
 
 
 function Navbar() {
@@ -39,7 +40,7 @@ function Navbar() {
   let menuLogado: ReactNode
 
   if (usuario.token !== "") {
-    menuLogado = (   
+    menuLogado = (
       <>
         <Link to='/sobre'>
           <li>
@@ -71,10 +72,6 @@ function Navbar() {
             <p className="container_navbar_conteudo-link text-lg">Cadastrar Cursos</p>
           </li>
         </Link>
-
-            
-        )
-    }
 
         <Link to='/categorias'>
           <li>
