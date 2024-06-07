@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Botao from '../../components/botao/Botao';
 import './Home.css'
-
-
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Home() {
 
 const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 500px)").matches);
+
+
 
 useEffect(() => {
     const handleResize = () => {
@@ -25,7 +26,22 @@ useEffect(() => {
     };
 }, []);
 
-console.log("é mobile" + isMobile);
+const { usuario, handleLogout } = useContext(AuthContext)
+
+
+const [logado, isLogado] = useState(false)
+
+useEffect(() => {
+    const usuarioLogado = () => {
+        if (usuario.token == usuario.token) {
+            isLogado(true)
+        } isLogado(false)
+}
+usuarioLogado()
+
+}, [usuario.token]);
+
+
 
 
     return (
@@ -36,6 +52,7 @@ console.log("é mobile" + isMobile);
                 </div>
 
                 <div className='container_navbar_botao flex justify-start text-lg gap-x-9 mt-[-120px] pt-10'>
+
                 
                 <Botao
                     texto="Entrar"
