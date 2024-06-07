@@ -26,10 +26,6 @@ useEffect(() => {
     };
 }, []);
 
-const { usuario, handleLogout } = useContext(AuthContext)
-
-
-const [logado, isLogado] = useState(false)
 
 const [logado, isLogado] = useState(false)
 
