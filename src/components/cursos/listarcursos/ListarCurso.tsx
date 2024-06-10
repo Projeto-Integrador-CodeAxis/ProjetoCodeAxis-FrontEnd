@@ -44,7 +44,7 @@ function ListarCurso() {
     return (
         <>
         
-
+        <div className="container_listarCursos w-auto">
         <div className="flex justify-center w-full my-4"> 
         {curso.length === 0 && (
             <ThreeDots 
@@ -56,12 +56,14 @@ function ListarCurso() {
             color="#1e9bebff"
         />
         )}
-
 </div>
+
+
         
-            <div className="flex justify-center w-full my-4 h-full">
-                <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
+            <div className="container_listarCursos-sectionCursos  justify-center w-full my-4 h-full p-12
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            
+                    
                         <>
                         {/* Regra para o usuário editar apenas os cursos que ele cadastrou */}
                         {
@@ -77,8 +79,9 @@ function ListarCurso() {
                             ))}
                         </>
                     </div>
-                </div>
             </div>
+
+            
             
         </>
     )

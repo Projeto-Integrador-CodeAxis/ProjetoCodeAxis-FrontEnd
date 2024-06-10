@@ -1,0 +1,62 @@
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+
+    @media screen and (max-width: 600px) { 
+
+
+    .container_cadastro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+    .container_cadastro_textos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+    }
+
+    .container_cadastro_form-container {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .container_cadastro_form-formulario {
+        height: auto;
+    }
+
+    .container_cadastro_form-formulario h1 {
+        font-size: 18px;
+    }
+
+    .container_cadastro_form-formulario input{
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .container_cadastro_form-formulario input::placeholder {
+        font-size: 12px;
+    }
+
+    .container_formcategoria_buttons a {
+        font-size: 12px;
+        padding: 10px;
+        height: 40px;
+        width: 100px;
+
+    }
+
+    .container_formcategoria_buttons button {
+        font-size: 12px;
+        padding: 10px;
+        height: 40px;
+        width: 100px;
+
+    }
+    
+}}
+

@@ -5,6 +5,8 @@ import Categoria from "../../../models/Categoria";
 import Curso from "../../../models/Curso";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ToastAlert } from "../../../utils/ToastAlert";
+import './FormCurso.css'
+import { RotatingLines } from "react-loader-spinner";
 
 function FormCurso() {
     let navigate = useNavigate();
@@ -12,6 +14,7 @@ function FormCurso() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
     const [categorias, setCategorias] = useState<Categoria[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     
     const [categoria, setCategoria] = useState<Categoria>({
       id: 0,
@@ -77,6 +80,7 @@ function FormCurso() {
   
     async function gerarNovoCurso(e: ChangeEvent<HTMLFormElement>) {
       e.preventDefault();
+      setIsLoading(true);
   
       console.log({ curso });
   
@@ -121,19 +125,14 @@ function FormCurso() {
     return (
         <>
         <section className="container_cadastro flex flex-row text-white text h-screen w-screen">
-            <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">
-                <div >
+            <div className="container_cadastro_textos flex flex-col gap-y-10 px-32 justify-center w-1/2">   
                     <h1 className="text-5xl font-semibold font-poppins text-left pl-2">{id !== undefined ? 'Editar Curso' : 'Cadastrar Curso'}</h1>
-                </div>
-
-                <div className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 ">
-                    <h2 className="font-poppins font-semibold">Cadastre novas categorias de cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
-                </div>
+                    <h2 className="container_cadastro_textos-categorias flex flex-col text-xl gap-y-9 font-poppins font-semibold">Cadastre novos categorias de cursos e amplie as oportunidades de aprendizado para nossos usuários.</h2>
             </div>
 
-            <div className="container_cadastro_form flex w-1/2 h-full justify-center items-center">
+            <div className="container_cadastro_form-container flex h-full w-1/2 justify-center items-center">
             
-            <form className="container_cadastro_form-formulario text-black flex flex-col h-[600px] justify-center items-center 
+            <form className="container_cadastro_form-formulario text-black flex flex-col h-[95%] justify-center items-center 
             bg-celestial-blue w-3/5 rounded-2xl gap-y-0.5 box-border p-4 shadow-white py-10"
             onSubmit={gerarNovoCurso} >
                 <h1 className="text-white font-poppins font-semibold text-2xl">
@@ -187,7 +186,7 @@ function FormCurso() {
                             onChange={(e:ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                   </div> 
-                   <div className="flex w-full justify-center">
+                  <div className="flex w-full justify-center">
                         <input
                             type="number"
                             name="valor"
@@ -241,14 +240,25 @@ function FormCurso() {
                                 hover:border-prussian-blue justify-center items-center flex"
                                 style={{ backgroundColor: "rgba(0, 46, 78, 0.5)" }}
                                 >
+
+                    {isLoading ? <RotatingLines
+                        strokeColor="white"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="24"
+                        visible={true}
+                    /> :
+
                                 <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+
+                                }
                             </button>
                 </div>
               </form>
-           </div>
+          </div>
         </section>
       </>
     )
 }
-     
+    
   export default FormCurso;

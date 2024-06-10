@@ -62,7 +62,7 @@ function FormCategoria() {
                 ToastAlert('Categoria atualizada com sucesso!','sucesso');
             } catch (error: any) {
                 if (error.toString().includes('401')) {
-                   ToastAlert('O token Expirou!','info')
+                    ToastAlert('O token Expirou!','info')
                     handleLogout()
                 } else {
                     ToastAlert('Erro ao atualizar a Categoria!','erro')

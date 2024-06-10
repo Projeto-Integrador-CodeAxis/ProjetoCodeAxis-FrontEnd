@@ -1,0 +1,65 @@
+@media screen and (min-width: 350px) and (max-width: 450px) {
+
+    @media screen and (max-width: 600px) { 
+
+
+
+.container_aulas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    height: auto; 
+
+}
+
+#accordion-collapse {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_aulas-selectAulas {
+    width: 80%;
+    text-align: center;
+}
+
+.container_aulas__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container_aulas__iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%; 
+    height: 500px;
+    margin-left: -10px; 
+    padding: 14px;
+    min-height: 150px;
+    height: auto;
+}
+
+.youtube-iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+}
+
+}

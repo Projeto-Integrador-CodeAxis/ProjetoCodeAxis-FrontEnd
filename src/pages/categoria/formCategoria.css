@@ -26,10 +26,11 @@
         min-height: none;
         height: 400px;
         margin-top: 30px;
+        width: 100%;
     }
 
     .container_cadastro_form-formulario {
-        width: 350px;
+        width: 80%;
         height: 270px;
         padding: 15px;
     }

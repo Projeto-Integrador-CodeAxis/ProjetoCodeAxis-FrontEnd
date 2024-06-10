@@ -41,19 +41,9 @@ function Navbar() {
 
   if (usuario.token !== "") {
     menuLogado = (
-      <>
-        <Link to='/sobre'>
-          <li>
-            <p className="container_navbar_conteudo-link text-lg">Sobre</p>
-          </li>
-        </Link>
-
-        <Link to='/contatos'>
-          <li>
-            <p className="container_navbar_conteudo-link text-lg">Contato</p>
-          </li>
-        </Link>
-
+      
+        <>
+        
         <Link to='/aulas'>
           <li>
             <p className="container_navbar_conteudo-link text-lg">Aulas</p>
@@ -90,8 +80,10 @@ function Navbar() {
               <p className="container_navbar_conteudo-link text-lg"><ShoppingCart size={25} weight='bold' /></p>
             </li>
           </Link>
+         
+          </>
 
-      </>
+    
     )
   }
 
@@ -119,7 +111,7 @@ function Navbar() {
         <Link to='./'>
           <div className='container_navbar-logo flex justify-center align-center w-18 pr-4'>
             <img id='logo' src="https://ik.imagekit.io/codeaxis/Home%20Page/Logo_20Mariah_20(1).png_updatedAt=1717679560993?updatedAt=1717679606461"
-                 alt="Logo" className="w-full h-16 object-cover" />
+                alt="Logo" className="w-full h-16 object-cover" />
           </div>
         </Link>
 
@@ -133,7 +125,19 @@ function Navbar() {
             </li>
           </Link>
 
-          <div className="ml-auto flex items-center gap-6">
+          <Link to='/sobre'>
+          <li>
+            <p className="container_navbar_conteudo-link text-lg">Sobre</p>
+          </li>
+        </Link>
+
+        <Link to='/contatos'>
+          <li>
+            <p className="container_navbar_conteudo-link text-lg">Contato</p>
+          </li>
+        </Link>
+
+          <div className="container_navbar_logado ml-auto flex items-center gap-6">
             {menuLogado}
           </div>
 

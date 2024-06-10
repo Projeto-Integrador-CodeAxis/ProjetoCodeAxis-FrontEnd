@@ -45,7 +45,7 @@ useEffect(() => {
 
 
     return (
-        <main className="container_home grid grid-cols-2 text-white text h-screen ">
+        <main className="container_home grid grid-cols-2 text-white h-screen w-full ">
             <div className="container_home_textos flex flex-col gap-y-20 px-32 justify-center">
                 <div className='container_home_textos-h1' >
                     <h1 className="text-6xl font-semibold font-poppins pb-20">Sua nova escola de tecnologia!</h1>
