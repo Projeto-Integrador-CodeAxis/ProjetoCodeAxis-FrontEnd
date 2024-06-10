@@ -23,10 +23,12 @@
     .container_cadastro_form-container {
         height: auto;
         margin-top: 20px;
+        width: 100%;
     }
 
     .container_cadastro_form-formulario {
         height: auto;
+        width: 80%;
     }
 
     .container_cadastro_form-formulario h1 {

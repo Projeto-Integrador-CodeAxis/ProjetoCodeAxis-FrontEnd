@@ -132,7 +132,7 @@ function FormCurso() {
 
             <div className="container_cadastro_form-container flex h-full w-1/2 justify-center items-center">
             
-            <form className="container_cadastro_form-formulario text-black flex flex-col h-[95%] justify-center items-center 
+            <form className="container_cadastro_form-formulario text-black flex flex-col h-[80%] justify-center items-center 
             bg-celestial-blue w-3/5 rounded-2xl gap-y-0.5 box-border p-4 shadow-white py-10"
             onSubmit={gerarNovoCurso} >
                 <h1 className="text-white font-poppins font-semibold text-2xl">
