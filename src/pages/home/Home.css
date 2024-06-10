@@ -22,11 +22,15 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            height: 350px;
+            height: 100px;
             width: 100%;
-            margin-top: -250px;
-            margin-bottom: -250px;
         }
+
+        .container_home_fotos-1 img {
+            height: 300px;
+            width: 100%;
+        }
+
 
         .container_home_fotos-2 {
             display: none;
@@ -62,6 +66,7 @@
         text-align: center;
         font-size: 25px;
         padding: 6px;
+        margin-top: -20px;
         }
 
         .container_navbar_botao {
