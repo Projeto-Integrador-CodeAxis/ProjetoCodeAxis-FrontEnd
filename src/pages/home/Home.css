@@ -22,12 +22,12 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            height: 100px;
+            height: 250px;
             width: 100%;
         }
 
         .container_home_fotos-1 img {
-            height: 300px;
+            height: 250px;
             width: 100%;
         }
 
@@ -44,16 +44,29 @@
         .container_home_textos {
         order: 2;
         padding: 16px;
+        margin-top: -350px;
         }
-    
-        .container_home_textos-h1 .heading {
-        text-align: center;
+
+        .container_home_textos-h1 {
+            text-align: center;
+            padding: 6px;
+            margin-bottom: 5px;
+            margin-top: -300px;
         }
 
         .container_home_textos h1 {
             font-size: 25px;
+            padding: 18px;
+            margin: 0;
+        }
+
+        .container_home_textos {
+
+            font-size: 25px;
+            padding: 18px;
+            margin: 0;
             text-align: center;
-            padding: 6px;
+
         }
     
         .container_home_textos-button {
@@ -72,15 +85,14 @@
         .container_navbar_botao {
             display: flex;
             justify-content: center;
+            
         }
 
         .container_home_textos-categorias p {
             font-size: 18px;
             margin-top: -25px;   
         }
-        .container_home_fotos-2 {
-            margin-top: 350px;
-        }
+        
     }
 
     }

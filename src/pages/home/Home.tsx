@@ -77,9 +77,8 @@ useEffect(() => {
                     
             </div>
 
-                <div className="container_home_textos-categorias flex flex-col text-xl mt-1 ">
-                    <h2 className="font-poppins font-semibold ">Promovendo inclusão digital através da educação.</h2>
-                </div>
+                    <h2 className="font-poppins font-semibold text-xl mt-1 ">Promovendo inclusão digital através da educação.</h2>
+                
             </div>
 
             <div className="container_home_fotos flex h-screen justify-center pr-[10%]">
