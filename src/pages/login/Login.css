@@ -36,5 +36,14 @@
 
     .container_login_form-forulario {
         width: 100%;
+        text-align: center;
+    }
+
+    .container_login_form-forulario input {
+        width: 95%;
+    }
+
+    .container_login_form-forulario button {
+        width: 150px;
     }
 }
