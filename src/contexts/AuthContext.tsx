@@ -36,11 +36,9 @@ export function AuthProvider({children}: AuthProviderProps){
     async function handleLogin(userLogin: UsuarioLogin ){
         setIsLoading(true);
 
-        try {
-            await login(`/usuarios/logar`, userLogin, (data: UsuarioLogin) => {
-                console.log("Dados recebidos do servidor:", data);
-                setUsuario(data);
-            });
+        try{
+
+            await login(`/usuarios/logar`, userLogin, setUsuario)
             ToastAlert("Usuário autenticado com sucesso!",'sucesso');
             setIsLoading(false);
         
