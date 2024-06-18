@@ -3,42 +3,34 @@ import './Sobre.css'
 function Sobre(){
     return(
         <>
-        <div className=" flex justify-center items-center min-h-[60vh] ml-40">
-            <div className="container grid grid-cols-2 text-white">
-                <div className="max-w-7xl flex flex-col  gap-4 justify-center py-2 text-left ">
+        <div className="container_sobre flex justify-center items-center min-h-[60vh]">
+                <div className="container_sobre-textos w-1/2 flex flex-col gap-4 justify-center py-2 text-white text-left ">
                     <h2 className="text-5xl font-bold p-5 ">Organização</h2>
                     <ul className="list-disc">
                         <li className="text-2xl text-left p-2">Missão: Prover acesso à educação de qualidade capacitando pessoas para um futuro profissional promissor.</li>
                         <li className="text-2xl text-left p-2">Visão: Desenvolver um projeto que faça a diferença, onde impacta positivamente a vida das pessoas.</li>
                         <li className="text-2xl text-left p-2">Valores: Inclusão, inovação, acessibilidade, equidade, e sustentabilidade.</li>
                     </ul>
-
-                    <div className="flex justify-around gap-4"> 
-                    </div>
                 </div> 
 
-                <div className="max-w-7xl flex  flex-col items-center justify-center">
+                <div className=" container_sobre-img max-w-7xl flex  flex-col items-center justify-center">
                     <img src="https://ik.imagekit.io/codeaxis/Home%20Page/educacao-de-qualidade.png?updatedAt=1716310266131" 
                     alt="Imagem da pagina home"
                     className="border-solid w-2/3" />
                 </div>
-            </div>
-       </div>
-       <div className=" flex justify-center min-h-[0vh]">
-        <div className="container border-solid align-middle text-white ">
-            <div className=" flex flex-col items-center gap-4 justify-center py-6 ">
+        </div>
+    
+        <div className="container_sobre-quemSomos flex justify-center">
+            <div className=" container_sobre-quemSomos-textos border-solid align-middle text-white flex flex-col items-center gap-4 justify-center py-6 ">
                 <h2 className=" text-5xl font-bold ">Quem somos</h2>
                 <p className="text-xl text-center my-5 mb-20">O CodeAxis é uma plataforma de e-commerce dedicada a oferecer cursos de tecnologia para pessoas de <br />baixa renda ou em situação de risco social. 
                 Este projeto visa proporcionar uma educação de qualidade, <br />alinhada ao Objetivo de Desenvolvimento Sustentável 4 - Educação de Qualidade - da ONU. </p>
-                <div className="flex justify-around gap-4">
-            </div>
             </div> 
-            
         </div>
-       </div>
+    
 
-       <div className="flex justify-center min-h-[0vh]">
-        <div className=" container grid grid-cols-3 flex-row align-middle text-white justify-items-center mt-20  ">
+    
+        <div className="container_sobre-cards container grid grid-cols-3 flex-row align-middle text-white justify-items-center mt-20  ">
 
                 <div className='flex items-center mb-40'>
                     <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
@@ -238,7 +230,7 @@ function Sobre(){
                     </div>
                 </div>            
         </div>
-       </div>
+    
         </>
     );
 }

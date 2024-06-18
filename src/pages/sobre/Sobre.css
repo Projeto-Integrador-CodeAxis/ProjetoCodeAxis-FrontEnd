@@ -1,3 +1,85 @@
-:root{
-    background: radial-gradient(circle, rgba(8,45,69,1) 0%, rgba(0,0,0,1) 100%)
-}
+
+@media screen and (min-width: 0px) and (max-width: 450px) {
+    @media (max-width: 450px) {
+        .container_sobre {
+            flex-direction: column;
+        }
+    
+        .container_sobre-textos {
+            width: 90%;
+            padding: 8px;
+            text-align: center;
+        }
+    
+        .container_sobre-textos h2 {
+            font-size: 2rem;
+            padding: 4px;
+        }
+
+        .container_sobre-textos ul {
+            text-align: center;
+        }
+    
+        .container_sobre-textos li {
+            font-size: 1rem;
+            text-align: center;
+            list-style: none;
+        }
+    
+        .container_sobre-img {
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .container_sobre-img img {
+            width: 90%;
+        }
+    
+        .container_sobre-quemSomos {
+            padding: 8px;
+            text-align: center;
+        }
+    
+        .container_sobre-quemSomos-textos {
+            width: 100%;
+            padding: 8px;
+        }
+    
+        .container_sobre-quemSomos-textos h2 {
+            font-size: 2rem;
+        }
+    
+        .container_sobre-quemSomos-textos p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+    
+        .container_sobre-cards {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            justify-items: center;
+        }
+    
+        .container_sobre-cards .flex-col {
+            width: 100%;
+        }
+
+        .container_sobre-cards div {
+            display: flex;
+            justify-content: center;
+            width: 80%;
+        }
+
+        .container_sobre-cards h1 {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .container_sobre-cards img {
+            width: 150px;
+        }
+    }
+    }
+    
+

@@ -4,7 +4,7 @@
     @media screen and (max-width: 600px) {
         .container_home {
         grid-template-columns: 1fr;
-        gap: 20px;
+        
         }
     
         .container_home_fotos {

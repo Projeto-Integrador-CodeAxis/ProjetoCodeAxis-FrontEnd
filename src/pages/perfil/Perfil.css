@@ -57,4 +57,28 @@
 }
 
 
+@media screen and (min-width: 0px) and (max-width: 450px) {
+
+    .container_perfil {
+        height: auto;
+    }
+    .container_perfil_dados {
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    .container_perfil_dados-lista {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .container_perfil_dados-lista-linha {
+        font-size: 18px;
+        text-align: center;
+    }
+
+}
+
 
