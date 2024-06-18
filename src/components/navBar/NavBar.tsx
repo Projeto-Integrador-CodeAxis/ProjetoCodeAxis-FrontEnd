@@ -50,28 +50,9 @@ function Navbar() {
           </li>
         </Link>
 
-        <Link to='/cursos'>
-          <li> 
-            <p className="container_navbar_conteudo-link text-lg">Cursos</p>
-          </li>
-        </Link>
-
-
-        <Link to='/formcurso'>
-          <li> 
-            <p className="container_navbar_conteudo-link text-lg">Cadastrar Cursos</p>
-          </li>
-        </Link>
-
-        <Link to='/categorias'>
+        <Link to='/perfil'>
           <li>
-            <p className="container_navbar_conteudo-link text-lg">Categorias</p>
-          </li>
-        </Link>
-
-        <Link to='/formcategoria'>
-          <li>
-            <p className="container_navbar_conteudo-link text-lg">Nova categoria</p>
+            <p className="container_navbar_conteudo-link text-lg">Perfil</p>
           </li>
         </Link>
 
@@ -80,24 +61,16 @@ function Navbar() {
               <p className="container_navbar_conteudo-link text-lg"><ShoppingCart size={25} weight='bold' /></p>
             </li>
           </Link>
-         
-          </>
 
+          <li>
+          <a onClick={logout} href="/" className="container_navbar_conteudo-link text-lg"><SignOut size={32} color="#f7f7f7" /></a>
+          </li>
+        
+          </>
     
     )
   }
 
-  let menuSair: ReactNode;
-
-  if (usuario.token !== "") {
-    menuSair = (
-      <>
-        <li>
-          <a onClick={logout} href="/" className="container_navbar_conteudo-link text-lg"><SignOut size={32} color="#f7f7f7" /></a>
-        </li>
-      </>
-    )
-  }
 
   function logout() {
     handleLogout()
@@ -137,11 +110,10 @@ function Navbar() {
           </li>
         </Link>
 
-          <div className="container_navbar_logado ml-auto flex items-center gap-6">
-            {menuLogado}
-          </div>
+        {menuLogado}
 
-          {menuSair}
+
+    
           
         </ul>
       </div>

@@ -20,6 +20,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
 import { CartProvider } from './contexts/CartContext'
 import Cart from './components/carrinho/cardcart/Cart'
+import Perfil from './pages/perfil/Perfil'
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
             <Route path="/deletarcurso/:id" element={<DeletarCurso />} />
             <Route path="/aulas" element={<Aulas />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/perfil" element={<Perfil />} />
             </Routes>
             <Footer />
           </BrowserRouter>

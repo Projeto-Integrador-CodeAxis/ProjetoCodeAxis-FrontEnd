@@ -25,19 +25,25 @@ export function AuthProvider({children}: AuthProviderProps){
         foto: '',
         usuario: '',
         senha: '',
+        roles: '',
         token: ''
     });
+
+  
 
     const [isLoading, setIsLoading] = useState(false);
 
     async function handleLogin(userLogin: UsuarioLogin ){
         setIsLoading(true);
 
-        try{
-
-            await login(`/usuarios/logar`, userLogin, setUsuario)
+        try {
+            await login(`/usuarios/logar`, userLogin, (data: UsuarioLogin) => {
+                console.log("Dados recebidos do servidor:", data);
+                setUsuario(data);
+            });
             ToastAlert("Usuário autenticado com sucesso!",'sucesso');
             setIsLoading(false);
+        
             
         }catch(error){
             ToastAlert("Dados do Usuário inconsistentes!",'erro');
@@ -54,6 +60,7 @@ export function AuthProvider({children}: AuthProviderProps){
             foto: '',
             usuario: '',
             senha: '',
+            roles: '',
             token: ''
         })
     }
