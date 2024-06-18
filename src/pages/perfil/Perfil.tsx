@@ -1,6 +1,6 @@
 import { ReactNode, useContext } from 'react'
 import './Perfil.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 
 
@@ -20,21 +20,29 @@ function Perfil () {
             <>
                 <ul className = 'container_perfil_dados-lista'>
 
+                <Link to='/cursos'>
                 <li className = 'container_perfil_dados-lista-linha'>
                     Cursos
                 </li>
+                </Link>
 
+                <Link to='/formcurso'>
                 <li className = 'container_perfil_dados-lista-linha'>
                     Cadastrar Cursos
                 </li>
+                </Link>
 
+                <Link to='/categorias'>
                 <li className = 'container_perfil_dados-lista-linha'>
                     Categorias
                 </li>
+                </Link>
 
+                <Link to='/formcategoria'>
                 <li className = 'container_perfil_dados-lista-linha'>
                     Cadastrar Categorias
                 </li>
+                </Link>
             </ul>
             </>
         )
