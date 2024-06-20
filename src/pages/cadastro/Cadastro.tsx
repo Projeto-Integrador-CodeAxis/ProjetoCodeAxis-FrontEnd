@@ -41,6 +41,7 @@ function Cadastro(){
         nome:'',
         usuario:'',
         senha:'',
+        roles: '',
         foto:'',
     })
     useEffect(()=>{
