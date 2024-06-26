@@ -56,14 +56,13 @@
         }
     
         .container_sobre-cards {
-            grid-template-columns: 1fr;
-            gap: 20px;
-            justify-items: center;
+            display: flex;
+            margin: 0 auto;
+            width: 90%;
+            margin-top: 150px;
         }
     
-        .container_sobre-cards .flex-col {
-            width: 100%;
-        }
+
 
         .container_sobre-cards div {
             display: flex;

@@ -30,10 +30,9 @@ function Sobre(){
     
 
     
-        <div className="container_sobre-cards container grid grid-cols-3 flex-row align-middle text-white justify-items-center mt-20  ">
+        <div className="container_sobre-cards h-auto flex flex-row flex-wrap justify-center items-center text-white mt-20 gap-x-8">
 
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/136142475?v=4"
                         alt=""
@@ -51,11 +50,9 @@ function Sobre(){
                             <GithubLogo size={40} />
                         </a>
                         </div>
-                    </div>
-                </div>
-                
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    </div>  
+
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/162627715?v=4"
                         alt=""
@@ -71,13 +68,11 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/anaclaraalencar" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
-                
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    </div>  
+
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/162219194?v=4"
                         alt=""
@@ -88,18 +83,16 @@ function Sobre(){
                             
                         </div>
                         <div className='flex p-4 gap-2'>
-                            <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/andrenas95//" target='_blank'>
+                            <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/andrenas95/" target='_blank'>
                             <LinkedinLogo size={40} />
                             </a>
                             <a href="https://github.com/andrenas95" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
-            
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    </div>  
+
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/131809585?v=4"
                         alt=""
@@ -115,13 +108,11 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/daniele0118" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
-                
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    </div>  
+
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/121838715?v=4"
                         alt=""
@@ -137,13 +128,11 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/IgorFernandesQuaresma" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
+                    </div>  
 
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/120491040?v=4"
                         alt=""
@@ -159,13 +148,11 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/eijess" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
+                    </div>  
 
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/117844737?v=4"
                         alt=""
@@ -181,20 +168,18 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/JhulienyB" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
+                    </div>  
 
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/149630140?v=4"
                         alt=""
                         className="rounded-full w-48 border-white border-4" />
                         </div>
                         <div className='mt-4'>
-                            <h1 className='font-bold text-2xl text-center'>Michel Cavalcante</h1>
+                            <h1 className='font-bold text-2xl'>Michel Cavalcante</h1>
                             
                         </div>
                         <div className='flex p-4 gap-2'>
@@ -203,20 +188,18 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/mcavalcantedesouza" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>
+                    </div>  
 
-                <div className='flex items-center mb-40'>
-                    <div className='flex flex-col items-center bg-celestial-blue w-96 rounded-2xl shadow'>
+                    <div className='flex flex-col justify-center items-center bg-celestial-blue w-96 mb-40 rounded-2xl shadow'>
                         <div className='mt-[-120px]'>
                         <img src="https://avatars.githubusercontent.com/u/162521119?v=4"
                         alt=""
                         className="rounded-full w-48 border-white border-4" />
                         </div>
                         <div className='mt-4'>
-                            <h1 className='font-bold text-2xl text-center'>Mariah Caroline P. G. Oliveira</h1>
+                            <h1 className='font-bold text-2xl'>Mariah Caroline P. G. Oliveira</h1>
                             
                         </div>
                         <div className='flex p-4 gap-2'>
@@ -225,11 +208,16 @@ function Sobre(){
                             </a>
                             <a href="https://github.com/Mariahcpgo" target='_blank'>
                             <GithubLogo size={40} />
-                            </a>
+                        </a>
                         </div>
-                    </div>
-                </div>            
+                    </div>  
+                    
         </div>
+
+                
+                
+                            
+
     
         </>
     );
